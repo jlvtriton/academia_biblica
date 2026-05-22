@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clase Interactiva - Teología Bíblica</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#0f172a;
+      --secondary:#1e293b;
+      --accent:#38bdf8;
+      --gold:#facc15;
+      --light:#f8fafc;
+    }
+
+    body{
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--primary);
+      color: white;
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+
+    .hero{
+      min-height:100vh;
+      background: linear-gradient(rgba(15,23,42,.85), rgba(15,23,42,.95)),
+      url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      text-align:center;
+      padding:40px;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      font-weight:900;
+      color:var(--gold);
+    }
+
+    .hero p{
+      font-size:1.4rem;
+      max-width:850px;
+      margin:auto;
+    }
+
+    .btn-start{
+      padding:15px 35px;
+      font-size:1.2rem;
+      border-radius:50px;
+      margin-top:30px;
+    }
+
+    section{
+      padding:100px 20px;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .section-title h2{
+      font-size:3rem;
+      font-weight:800;
+      color:var(--gold);
+    }
+
+    .card-custom{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:25px;
+      padding:30px;
+      height:100%;
+      transition:.4s;
+      backdrop-filter:blur(8px);
+    }
+
+    .card-custom:hover{
+      transform:translateY(-10px);
+      border-color:var(--accent);
+      box-shadow:0 10px 25px rgba(0,0,0,.4);
+    }
+
+    .icon-box{
+      font-size:3rem;
+      color:var(--accent);
+      margin-bottom:20px;
+    }
+
+    .highlight{
+      color:var(--gold);
+      font-weight:bold;
+    }
+
+    .quote-box{
+      border-left:5px solid var(--gold);
+      padding:25px;
+      background:rgba(255,255,255,0.04);
+      border-radius:10px;
+      margin-top:30px;
+    }
+
+    .timeline{
+      position:relative;
+      margin-top:40px;
+    }
+
+    .timeline::before{
+      content:'';
+      position:absolute;
+      left:50%;
+      width:4px;
+      background:var(--accent);
+      top:0;
+      bottom:0;
+    }
+
+    .timeline-item{
+      position:relative;
+      width:50%;
+      padding:20px 40px;
+    }
+
+    .timeline-item:nth-child(odd){
+      left:0;
+      text-align:right;
+    }
+
+    .timeline-item:nth-child(even){
+      left:50%;
+    }
+
+    .timeline-content{
+      background:rgba(255,255,255,0.05);
+      padding:25px;
+      border-radius:20px;
+    }
+
+    .accordion-button{
+      background:#1e293b;
+      color:white;
+    }
+
+    .accordion-button:not(.collapsed){
+      background:var(--accent);
+      color:black;
+    }
+
+    .accordion-body{
+      background:#0f172a;
+      color:white;
+    }
+
+    .quiz-box{
+      background:rgba(255,255,255,0.05);
+      padding:40px;
+      border-radius:25px;
+      text-align:center;
+    }
+
+    footer{
+      background:black;
+      text-align:center;
+      padding:40px;
+      margin-top:60px;
+    }
+
+    @media(max-width:768px){
+      .hero h1{
+        font-size:2.5rem;
+      }
+
+      .timeline::before{
+        left:20px;
+      }
+
+      .timeline-item{
+        width:100%;
+        left:0 !important;
+        text-align:left !important;
+        padding-left:60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#inicio">
+      <i class="fa-solid fa-book-bible"></i> Teología Bíblica
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#quees">¿Qué es?</a></li>
+        <li class="nav-item"><a class="nav-link" href="#importancia">Importancia</a></li>
+        <li class="nav-item"><a class="nav-link" href="#doctrinas">Doctrinas</a></li>
+        <li class="nav-item"><a class="nav-link" href="#quiz">Quiz</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="inicio">
+  <div class="container" data-aos="zoom-in">
+    <h1>INTRODUCCIÓN A LA TEOLOGÍA BÍBLICA</h1>
+
+    <p class="mt-4">
+      Descubre cómo interpretar correctamente la Palabra de Dios, comprender la sana doctrina y fortalecer tu vida espiritual mediante el estudio bíblico.
+    </p>
+
+    <a href="#quees" class="btn btn-info btn-lg btn-start fw-bold">
+      <i class="fa-solid fa-circle-play"></i> Comenzar Clase
+    </a>
+  </div>
+</section>
+
+<section id="quees">
+  <div class="container">
+
+    <div class="section-title" data-aos="fade-up">
+      <h2>¿Qué es Teología Bíblica?</h2>
+      <p class="text-light fs-5">Una herramienta esencial para interpretar correctamente la Biblia.</p>
+    </div>
+
+    <div class="row g-4 align-items-center">
+
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="card-custom">
+          <div class="icon-box">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+
+          <p>
+            Teología es una ciencia de estudio que busca conocer a Dios que se ha revelado en la Biblia e intenta proporcionar una interpretación cristiana de la realidad.
+          </p>
+
+          <p>
+            Nos permite llegar a conclusiones correctas sin contradecir otras verdades bíblicas.
+          </p>
+
+          <p>
+            Sin principios teológicos, cualquier interpretación podría parecer válida y esto llevaría al error.
+          </p>
+        </div>
+      </div>
+
+    <div class="section-title" data-aos="fade-up">
+      <h2>Etimología de la palabra Teología</h2>
+      <p class="text-light fs-5">Entendiendo su significado.</p>
+    </div>
+
+    <div class="row g-4 align-items-center">
+
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="card-custom">
+          <div class="icon-box">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+
+          <p>
+            La palabra Teología proviene del griego: θεος theos = 'Dios' y λογος logos: = estudio, razonamiento, y significa: “el estudio de las cosas o hechos relacionados con Dios”. Este término fue usado por primera vez por Platón en “La República” para referirse a la comprensión de la naturaleza divina por medio de la razón, en oposición a la comprensión literaria propia de los poetas de aquella época. Más tarde, Aristóteles empleó el término en numerosas ocasiones con otros significados seculares.
+          </p>
+
+        </div>
+      </div>
+
+
+
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="card-custom">
+          <div class="icon-box">
+            <i class="fa-solid fa-computer"></i>
+          </div>
+
+          <h4 class="mb-4 text-info">La Analogía del Manual</h4>
+
+          <p>
+            Así como una computadora tiene un manual de uso diseñado por su creador, Dios dejó la Biblia como guía para nuestra vida.
+          </p>
+
+          <div class="quote-box">
+            <strong class="highlight">Idea central:</strong>
+            <br><br>
+            La Teología Bíblica es el manual que nos ayuda a usar correctamente la Palabra de Dios.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="card-custom">
+          <div class="icon-box">
+            <i class="fa-solid fa-computer"></i>
+          </div>
+
+          <h4 class="mb-4 text-info">¿Por qué definimos la teología con el nombre de ciencia?</h4>
+
+          <p>
+            Se denomina ciencia al arreglo sistemático y lógico de hechos autenticados, comprobados. Se denomina ciencia a la teología porque consiste en hechos o verdades relacionadas con Dios y las cosas divinas, presentadas en forma lógica, veraz y ordenada.
+          </p>
+
+          <div class="quote-box">
+            <strong class="highlight">Diferencia entre Teología y doctrina.</strong>
+            <br><br>
+            La ¿Qué es doctrina?
+La doctrina es lo que Dios decidió revelar a la humanidad y son los principios o mandamientos bíblicos sobre los cuales debemos vivir y movernos como cristianos. Es la base de nuestra fe y lo que la Biblia nos enseña.
+			<br><br>
+¿Qué es Teología Bíblica?
+Es una herramienta para poder estudiar la doctrina revelada.
+<br><br>
+La doctrina es lo que Dios revela y debemos vivir según ella.﻿
+<br><br>
+La teología bíblica ayuda a verificar que las interpretaciones bíblicas sean correctas.﻿
+<br><br>
+Sin reglas de teología bíblica, cualquier interpretación sería válida y puede llevar al error.﻿
+<br><br>
+La correcta interpretación conduce a una sana doctrina y a una vida cristiana sólida.
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</section>
+
+<section id="importancia" style="background:#111827;">
+  <div class="container">
+
+    <div class="section-title" data-aos="fade-up">
+      <h2>Importancia de la Teología</h2>
+      <p class="fs-5">¿Por qué es tan importante estudiar doctrina?</p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-3" data-aos="flip-left">
+        <div class="card-custom text-center">
+          <div class="icon-box">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <h4>Sana Doctrina</h4>
+          <p>
+            Los apóstoles enseñaban primero doctrina sólida a los creyentes.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="100">
+        <div class="card-custom text-center">
+          <div class="icon-box">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h4>Protección</h4>
+          <p>
+            La teología protege al creyente del error y de falsas doctrinas.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="200">
+        <div class="card-custom text-center">
+          <div class="icon-box">
+            <i class="fa-solid fa-crosshairs"></i>
+          </div>
+          <h4>Defensa de la Fe</h4>
+          <p>
+            Capacita al creyente para responder preguntas difíciles.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="300">
+        <div class="card-custom text-center">
+          <div class="icon-box">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <h4>Comprensión</h4>
+          <p>
+            Ayuda a entender quiénes somos y cuál es el propósito de Dios.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="quote-box mt-5" data-aos="fade-up">
+      <h5 class="text-warning">Versículos Clave</h5>
+      <p>
+        Hechos 2:42 · 1 Timoteo 4:6 · Tito 1:9 · Mateo 22:29 · Gálatas 1:6-9
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <div class="section-title" data-aos="fade-up">
+      <h2>Teología Bíblica vs Teología Humana</h2>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="card-custom border border-success">
+          <h3 class="text-success mb-4">
+            <i class="fa-solid fa-check"></i> Teología Bíblica
+          </h3>
+
+          <ul>
+            <li>Basada en la Biblia.</li>
+            <li>Guiada por el Espíritu Santo.</li>
+            <li>Busca la verdad revelada por Dios.</li>
+            <li>Conduce a sana doctrina.</li>
+            <li>La Biblia define la Iglesia.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="card-custom border border-danger">
+          <h3 class="text-danger mb-4">
+            <i class="fa-solid fa-xmark"></i> Teología Humana
+          </h3>
+
+          <ul>
+            <li>Basada en opiniones y tradiciones.</li>
+            <li>Influenciada por costumbres humanas.</li>
+            <li>Puede contradecir la Biblia.</li>
+            <li>Produce errores doctrinales.</li>
+            <li>Las tradiciones reemplazan la Palabra.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="background:#111827;">
+  <div class="container">
+
+    <div class="section-title" data-aos="fade-up">
+      <h2>Doctrinas Fundamentales</h2>
+      <p class="fs-5">Áreas principales de estudio teológico.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-content">
+          <h5>📖 Escrituras</h5>
+          <p>Estudio de la Biblia y su autoridad.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-content">
+          <h5>👑 Dios</h5>
+          <p>La naturaleza y atributos divinos.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-content">
+          <h5>😇 Ángeles</h5>
+          <p>Seres espirituales y su función.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-content">
+          <h5>👤 Hombre</h5>
+          <p>Origen y propósito del ser humano.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-content">
+          <h5>⚠️ Pecado</h5>
+          <p>La caída y sus consecuencias.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-content">
+          <h5>✝️ Cristo</h5>
+          <p>La persona y obra de Jesús.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-content">
+          <h5>🕊️ Espíritu Santo</h5>
+          <p>Su obra en la vida del creyente.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-content">
+          <h5>⛪ Iglesia</h5>
+          <p>El cuerpo de Cristo y su misión.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <div class="section-title" data-aos="fade-up">
+      <h2>Preguntas Frecuentes</h2>
+    </div>
+
+    <div class="accordion" id="faqAccordion">
+
+      <div class="accordion-item bg-dark border-secondary mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq1">
+            ¿Por qué es importante interpretar correctamente la Biblia?
+          </button>
+        </h2>
+
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Porque una mala interpretación puede llevar al error doctrinal y alejarnos de la verdad de Dios.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item bg-dark border-secondary mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
+            ¿Puede alguien creer en Dios sin teología?
+          </button>
+        </h2>
+
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Toda persona tiene algún concepto sobre Dios, pero no toda teología es bíblica.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item bg-dark border-secondary mb-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
+            ¿Qué relación existe entre el Espíritu Santo y la teología?
+          </button>
+        </h2>
+
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            El Espíritu Santo ilumina al creyente para comprender la verdad bíblica, sin contradecir jamás las Escrituras.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="quiz" style="background:#111827;">
+  <div class="container">
+
+    <div class="section-title" data-aos="fade-up">
+      <h2>Mini Quiz Interactivo</h2>
+      <p>Comprueba cuánto aprendiste.</p>
+    </div>
+
+    <div class="quiz-box" data-aos="zoom-in">
+      <h4 class="mb-4">¿Qué es la Teología Bíblica?</h4>
+
+      <div class="d-grid gap-3 col-lg-8 mx-auto">
+        <button class="btn btn-outline-light quiz-option">Una tradición religiosa humana</button>
+        <button class="btn btn-outline-light quiz-option correct">Una herramienta para interpretar correctamente la Biblia</button>
+        <button class="btn btn-outline-light quiz-option">Una filosofía moderna</button>
+      </div>
+
+      <div id="quizResult" class="mt-4 fs-4 fw-bold"></div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container text-center" data-aos="fade-up">
+
+    <h2 class="text-warning mb-4">Conclusión</h2>
+
+    <p class="fs-4">
+      La Teología Bíblica nos ayuda a comprender correctamente la Palabra de Dios,
+      protegernos del error y crecer en una sana doctrina.
+    </p>
+
+    <div class="quote-box mt-5">
+      <h4 class="text-info">
+        “Procura con diligencia presentarte a Dios aprobado...”
+      </h4>
+      <p>2 Timoteo 2:15</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <h5>Clase Interactiva de Teología Bíblica</h5>
+  <p>Iglesia La Luz de Dios © 2026</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+    duration:1000,
+    once:true
+  });
+
+  const options = document.querySelectorAll('.quiz-option');
+  const result = document.getElementById('quizResult');
+
+  options.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(btn.classList.contains('correct')){
+        result.innerHTML = '✅ ¡Correcto!';
+        result.style.color = '#22c55e';
+      }else{
+        result.innerHTML = '❌ Intenta nuevamente';
+        result.style.color = '#ef4444';
+      }
+    })
+  })
+</script>
+
+</body>
+</html>

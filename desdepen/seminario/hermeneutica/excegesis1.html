@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exégesis de 2 Tesalonicenses 2</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --primary:#0f172a;
+ --secondary:#d4a017;
+ --accent:#2563eb;
+ --light:#f8fafc;
+}
+
+*{
+ font-family:'Poppins',sans-serif;
+ scroll-behavior:smooth;
+}
+
+body{
+ background:#f1f5f9;
+ overflow-x:hidden;
+}
+
+.hero{
+ min-height:100vh;
+ background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=1600&auto=format&fit=crop');
+ background-size:cover;
+ background-position:center;
+ color:white;
+ display:flex;
+ align-items:center;
+}
+
+.glass{
+ background:rgba(255,255,255,.08);
+ backdrop-filter:blur(12px);
+ border:1px solid rgba(255,255,255,.15);
+ border-radius:30px;
+ padding:50px;
+}
+
+.hero h1{
+ font-size:4rem;
+ font-weight:700;
+}
+
+.navbar{
+ background:rgba(15,23,42,.96)!important;
+ backdrop-filter:blur(10px);
+}
+
+section{
+ padding:90px 0;
+}
+
+.section-title{
+ text-align:center;
+ margin-bottom:60px;
+}
+
+.section-title h2{
+ font-weight:700;
+ color:var(--primary);
+}
+
+.card-box{
+ background:white;
+ border-radius:25px;
+ box-shadow:0 10px 25px rgba(0,0,0,.08);
+ overflow:hidden;
+ transition:.4s;
+ height:100%;
+}
+
+.card-box:hover{
+ transform:translateY(-8px);
+}
+
+.card-header-custom{
+ background:linear-gradient(135deg,var(--primary),var(--accent));
+ color:white;
+ padding:30px;
+}
+
+.icon-box{
+ width:70px;
+ height:70px;
+ border-radius:50%;
+ background:rgba(255,255,255,.15);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:2rem;
+ margin-bottom:20px;
+}
+
+.content-box{
+ padding:35px;
+}
+
+.verse-box{
+ background:#eef4ff;
+ border-left:5px solid var(--accent);
+ padding:20px;
+ border-radius:15px;
+ margin:20px 0;
+}
+
+.greek-box{
+ background:#111827;
+ color:#facc15;
+ padding:20px;
+ border-radius:15px;
+ margin-top:20px;
+ font-size:1.1rem;
+}
+
+.fade-in{
+ opacity:0;
+ transform:translateY(40px);
+ transition:all .8s ease;
+}
+
+.fade-in.visible{
+ opacity:1;
+ transform:translateY(0);
+}
+
+.timeline-item{
+ background:white;
+ border-radius:20px;
+ padding:30px;
+ box-shadow:0 8px 20px rgba(0,0,0,.08);
+ height:100%;
+ text-align:center;
+}
+
+.accordion-button{
+ font-weight:600;
+}
+
+.dark-toggle{
+ position:fixed;
+ top:90px;
+ right:20px;
+ z-index:9999;
+}
+
+.dark-mode{
+ background:#111827!important;
+ color:white!important;
+}
+
+.dark-mode .card-box,
+.dark-mode .timeline-item,
+.dark-mode .accordion-item,
+.dark-mode .modal-content{
+ background:#1f2937!important;
+ color:white!important;
+}
+
+.dark-mode .section-title h2{
+ color:white;
+}
+
+footer{
+ background:#0f172a;
+ color:white;
+ text-align:center;
+ padding:40px 0;
+}
+
+@media(max-width:768px){
+ .hero h1{
+   font-size:2.5rem;
+ }
+}
+</style>
+</head>
+<body>
+
+<button class="btn btn-dark rounded-pill dark-toggle" onclick="toggleDarkMode()">
+<i class="fa-solid fa-moon"></i> Modo Oscuro
+</button>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand fw-bold" href="#inicio">
+<i class="fa-solid fa-book-bible"></i> Exégesis Bíblica
+</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#contexto">Contexto</a></li>
+<li class="nav-item"><a class="nav-link" href="#estructura">Estructura</a></li>
+<li class="nav-item"><a class="nav-link" href="#exegesis">Exégesis</a></li>
+<li class="nav-item"><a class="nav-link" href="#aplicacion">Aplicación</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<section class="hero" id="inicio">
+<div class="container">
+<div class="glass fade-in visible">
+<h1>Exégesis de 2 Tesalonicenses 2:1-12</h1>
+<h3 class="mt-4">La Manifestación del Hombre de Pecado</h3>
+
+<p class="lead mt-4">
+Un estudio exegético completo, histórico, gramatical y teológico del pasaje escatológico más debatido del Nuevo Testamento.
+</p>
+
+<div class="d-flex flex-wrap gap-2 mt-4">
+<span class="badge bg-warning text-dark p-3">Escatología</span>
+<span class="badge bg-primary p-3">Exégesis</span>
+<span class="badge bg-danger p-3">Hermenéutica</span>
+<span class="badge bg-success p-3">Griego Bíblico</span>
+</div>
+
+<a href="#contexto" class="btn btn-warning btn-lg rounded-pill mt-4">
+<i class="fa-solid fa-book-open"></i> Comenzar Estudio
+</a>
+</div>
+</div>
+</section>
+
+<section id="contexto">
+<div class="container">
+
+<div class="section-title">
+<h2>1. Contexto General de la Carta</h2>
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-4">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-user fa-3x text-primary mb-4"></i>
+<h4>Autor</h4>
+<p>El apóstol Pablo escribió esta carta pastoral para corregir errores doctrinales relacionados con la venida de Cristo.</p>
+</div>
+</div>
+
+<div class="col-lg-4">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-city fa-3x text-success mb-4"></i>
+<h4>Destinatarios</h4>
+<p>La iglesia de Tesalónica atravesaba persecución, confusión escatológica y falsas enseñanzas.</p>
+</div>
+</div>
+
+<div class="col-lg-4">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-triangle-exclamation fa-3x text-danger mb-4"></i>
+<h4>Problema</h4>
+<p>Algunos afirmaban falsamente que el Día del Señor ya había llegado.</p>
+</div>
+</div>
+
+</div>
+
+<div class="card-box fade-in mt-5">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-scroll"></i></div>
+<h3>Propósito de Pablo</h3>
+</div>
+
+<div class="content-box">
+<ul>
+<li>Corregir errores doctrinales.</li>
+<li>Traer calma a la iglesia.</li>
+<li>Explicar eventos previos a la segunda venida.</li>
+<li>Advertir acerca del engaño espiritual.</li>
+<li>Fortalecer la firmeza doctrinal.</li>
+</ul>
+
+<div class="verse-box">
+<strong>Idea Central:</strong><br>
+Antes del regreso glorioso de Cristo ocurrirá una gran apostasía y se manifestará el hombre de pecado.
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="estructura" style="background:#eef4ff;">
+<div class="container">
+
+<div class="section-title">
+<h2>2. Estructura Literaria del Pasaje</h2>
+</div>
+
+<div class="accordion fade-in" id="estructuraAccordion">
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#uno">
+Versículos 1-2 — Advertencia contra el engaño
+</button>
+</h2>
+<div id="uno" class="accordion-collapse collapse show" data-bs-parent="#estructuraAccordion">
+<div class="accordion-body">
+Pablo exhorta a los creyentes a no alarmarse por falsas enseñanzas acerca del Día del Señor.
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#dos">
+Versículos 3-5 — La apostasía y el hombre de pecado
+</button>
+</h2>
+<div id="dos" class="accordion-collapse collapse" data-bs-parent="#estructuraAccordion">
+<div class="accordion-body">
+Antes del regreso de Cristo ocurrirá un alejamiento espiritual masivo y aparecerá el hombre de pecado.
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#tres">
+Versículos 6-7 — El que detiene
+</button>
+</h2>
+<div id="tres" class="accordion-collapse collapse" data-bs-parent="#estructuraAccordion">
+<div class="accordion-body">
+Existe un poder o persona que actualmente restringe la manifestación total del inicuo.
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#cuatro">
+Versículos 8-10 — Manifestación del inicuo
+</button>
+</h2>
+<div id="cuatro" class="accordion-collapse collapse" data-bs-parent="#estructuraAccordion">
+<div class="accordion-body">
+El inicuo actuará con poder satánico, señales y engaño espiritual.
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#cinco">
+Versículos 11-12 — Juicio divino
+</button>
+</h2>
+<div id="cinco" class="accordion-collapse collapse" data-bs-parent="#estructuraAccordion">
+<div class="accordion-body">
+Dios entrega al engaño a quienes rechazaron voluntariamente la verdad.
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="exegesis">
+<div class="container">
+
+<div class="section-title">
+<h2>3. Exégesis Versículo por Versículo</h2>
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-12">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-book-open-reader"></i></div>
+<h3>Versículos 1-2 — La Venida de Cristo</h3>
+</div>
+<div class="content-box">
+
+<div class="verse-box">
+"Pero con respecto a la venida de nuestro Señor Jesucristo..."
+</div>
+
+<p>
+La palabra “venida” proviene del griego:
+</p>
+
+<div class="greek-box">
+παρουσία (parousía)
+</div>
+
+<p class="mt-3">
+Este término significa:
+</p>
+
+<ul>
+<li>Presencia oficial.</li>
+<li>Llegada gloriosa.</li>
+<li>Manifestación real de autoridad.</li>
+</ul>
+
+<p>
+En el mundo romano era utilizada para describir la llegada de emperadores o reyes.
+Pablo la usa para describir el regreso glorioso de Cristo.
+</p>
+
+<button class="btn btn-primary rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#modalParousia">
+Análisis Profundo de “Parousía”
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-person-falling"></i></div>
+<h3>Versículo 3 — La Apostasía</h3>
+</div>
+<div class="content-box">
+
+<div class="verse-box">
+"...porque no vendrá sin que antes venga la apostasía..."
+</div>
+
+<p>
+La palabra griega utilizada es:
+</p>
+
+<div class="greek-box">
+ἀποστασία (apostasia)
+</div>
+
+<p class="mt-3">
+Describe:
+</p>
+
+<ul>
+<li>Rebelión espiritual.</li>
+<li>Abandono consciente de la verdad.</li>
+<li>Alejamiento deliberado de Dios.</li>
+</ul>
+
+<div class="alert alert-warning mt-4">
+La apostasía bíblica no es ignorancia accidental; implica rechazo consciente de la verdad divina.
+</div>
+
+<button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#modalApostasia">
+Ver Ejemplos Bíblicos de Apostasía
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-crown"></i></div>
+<h3>Versículos 3-4 — El Hombre de Pecado</h3>
+</div>
+<div class="content-box">
+
+<div class="verse-box">
+"...y se manifieste el hombre de pecado, el hijo de perdición..."
+</div>
+
+<p>
+Tradicionalmente este personaje ha sido identificado como el Anticristo.
+</p>
+
+<ul>
+<li>Figura escatológica.</li>
+<li>Inspirado por Satanás.</li>
+<li>Opuesto a Dios.</li>
+<li>Busca adoración universal.</li>
+</ul>
+
+<h5 class="mt-4">El Templo de Dios</h5>
+
+<p>
+Existen varias interpretaciones hermenéuticas sobre el “templo”.
+</p>
+
+<div class="row g-3 mt-3">
+<div class="col-md-4">
+<div class="timeline-item">
+<h5>Interpretación Futurista</h5>
+<p>Habrá un templo literal reconstruido en Jerusalén.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="timeline-item">
+<h5>Interpretación Simbólica</h5>
+<p>Representa autoridad religiosa o espiritual.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="timeline-item">
+<h5>Interpretación Histórica</h5>
+<p>Representa sistemas religiosos corruptos.</p>
+</div>
+</div>
+</div>
+
+<button class="btn btn-warning rounded-pill mt-4" data-bs-toggle="modal" data-bs-target="#modalTemplo">
+Comparar Interpretaciones
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-hand"></i></div>
+<h3>Versículos 6-7 — El que Detiene</h3>
+</div>
+<div class="content-box">
+
+<div class="verse-box">
+"Y ahora vosotros sabéis lo que lo detiene..."
+</div>
+
+<p>
+Este es uno de los textos más debatidos de toda la escatología bíblica.
+</p>
+
+<div class="accordion mt-4" id="restrenedorAccordion">
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#r1">
+Teoría 1 — El Espíritu Santo
+</button>
+</h2>
+<div id="r1" class="accordion-collapse collapse show">
+<div class="accordion-body">
+Muchos intérpretes creen que el Espíritu Santo restringe actualmente el mal.
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#r2">
+Teoría 2 — El Gobierno Humano
+</button>
+</h2>
+<div id="r2" class="accordion-collapse collapse">
+<div class="accordion-body">
+Basado en Romanos 13, algunos creen que el orden civil limita el caos total.
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#r3">
+Teoría 3 — Poder Angelical
+</button>
+</h2>
+<div id="r3" class="accordion-collapse collapse">
+<div class="accordion-body">
+Algunos lo relacionan con Miguel mencionado en Daniel.
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#r4">
+Teoría 4 — La Soberanía de Dios
+</button>
+</h2>
+<div id="r4" class="accordion-collapse collapse">
+<div class="accordion-body">
+Dios controla soberanamente el tiempo exacto de la manifestación del inicuo.
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="alert alert-primary mt-4">
+Principio Exegético: Pablo dice “vosotros sabéis”, indicando que la iglesia había recibido enseñanza oral adicional que no poseemos completamente.
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-skull"></i></div>
+<h3>Versículos 8-10 — El Inicuo y el Engaño</h3>
+</div>
+<div class="content-box">
+
+<div class="verse-box">
+"...inicuo cuyo advenimiento es por obra de Satanás..."
+</div>
+
+<p>
+El inicuo actuará mediante:
+</p>
+
+<ul>
+<li>Señales.</li>
+<li>Prodigios mentirosos.</li>
+<li>Poder satánico.</li>
+<li>Engaño espiritual.</li>
+</ul>
+
+<div class="alert alert-danger mt-4">
+La Biblia enseña que no todo milagro proviene de Dios.
+</div>
+
+<button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#modalMilagros">
+Milagros Falsos en la Biblia
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-gavel"></i></div>
+<h3>Versículos 11-12 — Juicio Divino</h3>
+</div>
+<div class="content-box">
+
+<div class="verse-box">
+"Dios les envía un poder engañoso..."
+</div>
+
+<p>
+Este pasaje habla del endurecimiento judicial de quienes rechazaron deliberadamente la verdad.
+</p>
+
+<ul>
+<li>No significa que Dios sea autor del pecado.</li>
+<li>Implica juicio sobre corazones rebeldes.</li>
+<li>Se relaciona con Romanos 1.</li>
+</ul>
+
+<div class="alert alert-warning mt-4">
+El rechazo continuo de la verdad endurece progresivamente el corazón humano.
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="aplicacion" style="background:#eef4ff;">
+<div class="container">
+
+<div class="section-title">
+<h2>4. Aplicaciones Hermenéuticas y Espirituales</h2>
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-6">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-shield-halved fa-3x text-primary mb-4"></i>
+<h4>Firmeza Doctrinal</h4>
+<p>La iglesia debe permanecer firme frente al engaño espiritual y las falsas doctrinas.</p>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-eye fa-3x text-success mb-4"></i>
+<h4>Discernimiento Espiritual</h4>
+<p>No todo milagro o manifestación espiritual proviene de Dios.</p>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-crown fa-3x text-warning mb-4"></i>
+<h4>Soberanía de Cristo</h4>
+<p>Cristo tiene control absoluto de la historia y destruirá al inicuo.</p>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-heart fa-3x text-danger mb-4"></i>
+<h4>Amor por la Verdad</h4>
+<p>La salvación está relacionada con recibir y amar la verdad divina.</p>
+</div>
+</div>
+
+</div>
+
+<div class="card-box fade-in mt-5">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-scroll"></i></div>
+<h3>Conclusión Exegética</h3>
+</div>
+<div class="content-box">
+
+<p>
+Pablo enseña que antes de la manifestación plena del Día del Señor ocurrirá:
+</p>
+
+<ul>
+<li>Una gran apostasía.</li>
+<li>La manifestación del hombre de pecado.</li>
+<li>Un aumento del engaño espiritual.</li>
+</ul>
+
+<div class="verse-box">
+Aunque el misterio de la iniquidad ya opera en el mundo, Cristo vencerá definitivamente al hombre de pecado y a todo engaño satánico.
+</div>
+
+<p class="mt-4">
+El propósito pastoral del pasaje no es producir miedo, sino firmeza doctrinal, discernimiento espiritual y esperanza en la victoria final de Cristo.
+</p>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+<h4>Exégesis Bíblica de 2 Tesalonicenses 2</h4>
+<p>Material didáctico para estudios bíblicos, institutos y formación ministerial.</p>
+</div>
+</footer>
+
+<div class="modal fade" id="modalParousia" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Análisis de la Palabra “Parousía”</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<p>
+En el contexto grecorromano, “parousía” describía la llegada oficial y gloriosa de un rey o emperador.
+Pablo utiliza este término para enfatizar que el regreso de Cristo será visible, glorioso y lleno de autoridad.
+</p>
+
+<div class="verse-box">
+Mateo 24:27 — “Porque como el relámpago que sale del oriente...”
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="modalApostasia" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Ejemplos Bíblicos de Apostasía</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<ul>
+<li>Israel adorando el becerro de oro (Éxodo 32).</li>
+<li>Judas Iscariote abandonando a Cristo.</li>
+<li>Demas amando este mundo (2 Timoteo 4:10).</li>
+</ul>
+
+<div class="alert alert-danger mt-4">
+La apostasía implica abandonar conscientemente la verdad conocida.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="modalTemplo" tabindex="-1">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Comparación Hermenéutica del “Templo”</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Interpretación</th>
+<th>Descripción</th>
+<th>Fortaleza</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Futurista</td>
+<td>Templo literal reconstruido.</td>
+<td>Lectura literal del texto.</td>
+</tr>
+<tr>
+<td>Simbólica</td>
+<td>Representa autoridad espiritual.</td>
+<td>Conexión con simbolismo bíblico.</td>
+</tr>
+<tr>
+<td>Histórica</td>
+<td>Sistemas religiosos corruptos.</td>
+<td>Aplicación histórica continua.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="modalMilagros" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Milagros Falsos en la Biblia</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+
+<ul>
+<li>Los magos de Egipto imitando señales de Moisés.</li>
+<li>Mateo 24:24 — falsos cristos y falsas señales.</li>
+<li>Apocalipsis 13 — señales del falso profeta.</li>
+</ul>
+
+<div class="verse-box">
+Discernimiento bíblico siempre debe acompañar cualquier manifestación espiritual.
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+function toggleDarkMode(){
+ document.body.classList.toggle('dark-mode');
+}
+
+const observer = new IntersectionObserver(entries => {
+ entries.forEach(entry => {
+   if(entry.isIntersecting){
+     entry.target.classList.add('visible');
+   }
+ });
+});
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

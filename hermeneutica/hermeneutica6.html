@@ -1,0 +1,2494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso de Hermenéutica Bíblica</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#1e3a5f;
+      --secondary:#c49b63;
+      --light:#f4f7fb;
+      --dark:#111827;
+      --accent:#2c5f9e;
+    }
+
+    *{
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--light);
+      color:#333;
+      overflow-x:hidden;
+    }
+
+    .hero{
+      background:linear-gradient(rgba(10,20,40,.8),rgba(10,20,40,.8)),url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      color:white;
+      position:relative;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      font-weight:700;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      max-width:800px;
+    }
+
+    .glass{
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.2);
+      backdrop-filter:blur(10px);
+      border-radius:25px;
+      padding:30px;
+      box-shadow:0 8px 25px rgba(0,0,0,.3);
+    }
+
+    .navbar{
+      background:rgba(17,24,39,.92)!important;
+      backdrop-filter:blur(8px);
+    }
+
+    .navbar-brand{
+      font-weight:700;
+      color:white!important;
+    }
+
+    .nav-link{
+      color:#ddd!important;
+      margin-left:10px;
+      transition:.3s;
+    }
+
+    .nav-link:hover{
+      color:var(--secondary)!important;
+    }
+
+    section{
+      padding:90px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-weight:700;
+      color:var(--primary);
+      position:relative;
+      display:inline-block;
+      padding-bottom:10px;
+    }
+
+    .section-title h2::after{
+      content:'';
+      width:80px;
+      height:4px;
+      background:var(--secondary);
+      position:absolute;
+      left:50%;
+      bottom:0;
+      transform:translateX(-50%);
+      border-radius:10px;
+    }
+
+    .class-card{
+      background:white;
+      border:none;
+      border-radius:25px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      transition:.4s;
+      height:100%;
+    }
+
+    .class-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 15px 35px rgba(0,0,0,.15);
+    }
+
+    .card-header-custom{
+      background:linear-gradient(135deg,var(--primary),var(--accent));
+      color:white;
+      padding:25px;
+    }
+
+    .icon-box{
+      width:70px;
+      height:70px;
+      background:rgba(255,255,255,.15);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:2rem;
+      margin-bottom:15px;
+    }
+
+    .badge-topic{
+      background:var(--secondary);
+      color:white;
+      padding:8px 14px;
+      border-radius:50px;
+      margin:5px;
+      display:inline-block;
+      font-size:.85rem;
+    }
+
+    .verse-box{
+      background:#eef4ff;
+      border-left:5px solid var(--accent);
+      padding:20px;
+      border-radius:10px;
+      margin-top:15px;
+      font-style:italic;
+    }
+
+    .timeline{
+      position:relative;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    .timeline::after{
+      content:'';
+      position:absolute;
+      width:6px;
+      background:var(--secondary);
+      top:0;
+      bottom:0;
+      left:50%;
+      margin-left:-3px;
+    }
+
+    .timeline-container{
+      padding:10px 40px;
+      position:relative;
+      width:50%;
+    }
+
+    .timeline-container.left{
+      left:0;
+    }
+
+    .timeline-container.right{
+      left:50%;
+    }
+
+    .timeline-content{
+      background:white;
+      padding:25px;
+      border-radius:20px;
+      box-shadow:0 8px 20px rgba(0,0,0,.08);
+    }
+
+    .timeline-container::after{
+      content:'';
+      position:absolute;
+      width:25px;
+      height:25px;
+      right:-13px;
+      background:var(--secondary);
+      border:4px solid white;
+      top:20px;
+      border-radius:50%;
+      z-index:1;
+    }
+
+    .timeline-container.right::after{
+      left:-12px;
+    }
+
+    .accordion-button:not(.collapsed){
+      background:var(--primary);
+      color:white;
+    }
+
+    .activity-box{
+      background:white;
+      border-radius:20px;
+      padding:25px;
+      box-shadow:0 10px 20px rgba(0,0,0,.08);
+      margin-bottom:25px;
+      border-top:5px solid var(--secondary);
+    }
+
+    footer{
+      background:var(--dark);
+      color:white;
+      padding:40px 0;
+      text-align:center;
+    }
+
+    .floating-btn{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      width:55px;
+      height:55px;
+      background:var(--secondary);
+      color:white;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:1.3rem;
+      text-decoration:none;
+      box-shadow:0 8px 18px rgba(0,0,0,.2);
+      z-index:999;
+    }
+
+    @media(max-width:768px){
+      .hero h1{
+        font-size:2.4rem;
+      }
+
+      .timeline::after{
+        left:31px;
+      }
+
+      .timeline-container{
+        width:100%;
+        padding-left:70px;
+        padding-right:25px;
+      }
+
+      .timeline-container.right{
+        left:0;
+      }
+
+      .timeline-container.left::after,
+      .timeline-container.right::after{
+        left:18px;
+      }
+    }
+  
+    .fade-in{
+      opacity:0;
+      transform:translateY(40px);
+      transition:all .8s ease;
+    }
+
+    .fade-in.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+/* =========================================
+     CSS MODO OSCURO
+========================================= */
+
+
+.dark-mode{
+    background:#111827 !important;
+    color:white !important;
+}
+
+.dark-mode .card-box,
+.dark-mode .timeline-item,
+.dark-mode .accordion-item,
+.dark-mode .modal-content,
+.dark-mode .activity-box{
+
+    background:#1f2937 !important;
+    color:white !important;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode p,
+.dark-mode li{
+
+    color:white !important;
+}
+
+.dark-toggle{
+    position:fixed;
+    top:90px;
+    right:20px;
+    z-index:9999;
+}
+    
+.dark-mode .glass,
+.dark-mode .verse-box,
+.dark-mode .badge-topic{
+
+    background:#1f2937 !important;
+    color:white !important;
+}
+	
+	
+/* =========================================
+   CONFIGURACIÓN GENERAL PDF
+========================================= */
+
+@media print {
+
+    body{
+
+        background:white !important;
+        color:black !important;
+
+        font-family:'Georgia',serif;
+
+        margin:0;
+        padding:0;
+
+        zoom:85%;
+    }
+
+    /* =========================================
+       OCULTAR SOLO ELEMENTOS INNECESARIOS
+    ========================================= */
+
+    .dark-toggle,
+    .no-print,
+    .btn-close,
+    .modal{
+
+        display:none !important;
+    }
+
+    /* =========================================
+       SOLUCIÓN FLEXBOX BOOTSTRAP
+    ========================================= */
+
+    .row{
+        display:block !important;
+    }
+
+    .col-lg-6,
+    .col-lg-4,
+    .col-md-6{
+
+        width:100% !important;
+        display:block !important;
+    }
+
+    /* =========================================
+       SOLUCIÓN TARJETAS VACÍAS
+    ========================================= */
+
+    .activity-box,
+    .card-box,
+    .glass,
+    .timeline-item{
+
+        height:auto !important;
+        min-height:auto !important;
+        max-height:none !important;
+
+        overflow:visible !important;
+
+        padding:15px !important;
+
+        margin-bottom:20px !important;
+
+        display:block !important;
+
+        background:white !important;
+
+        color:black !important;
+
+        border:1px solid #d1d5db !important;
+
+        box-shadow:none !important;
+    }
+
+    /* =========================================
+       ANIMACIONES
+    ========================================= */
+
+    .fade-in{
+
+        opacity:1 !important;
+        transform:none !important;
+    }
+
+    /* =========================================
+       VERSÍCULOS
+    ========================================= */
+
+    .verse-box{
+
+        background:#f3f4f6 !important;
+
+        border-left:5px solid #2563eb;
+
+        color:black !important;
+
+        padding:15px;
+    }
+
+    /* =========================================
+       CERTIFICADO
+    ========================================= */
+
+    #certificadoFinal{
+
+        page-break-before:always;
+    }
+
+    #certificadoFinal .card-box{
+
+        border:8px double #d4af37 !important;
+
+        padding:80px !important;
+
+        text-align:center;
+    }
+
+}
+	
+	
+	
+	
+</style>
+</head>
+<body>
+
+<button class="btn btn-dark rounded-pill dark-toggle"
+        onclick="toggleDarkMode()">
+    🌙 Modo Oscuro
+</button>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#inicio"><i class="fa-solid fa-book-bible"></i> Hermenéutica Bíblica</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#clases">Clases</a></li>
+        <li class="nav-item"><a class="nav-link" href="#principios">Principios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#actividades">Actividades</a></li>
+        <li class="nav-item"><a class="nav-link" href="#conclusion">Conclusión</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="glass">
+      <h1>Curso de Hermenéutica Bíblica</h1>
+      <p class="mt-4">
+        Aprende a interpretar correctamente las Escrituras utilizando principios bíblicos,
+        históricos y espirituales. Este material está diseñado para desarrollarse en 4 clases
+        dinámicas y profundas, ideal para iglesia, discipulado o instituto bíblico.
+      </p>
+
+      <div class="mt-4">
+        <span class="badge-topic">Interpretación Bíblica</span>
+        <span class="badge-topic">Contexto Histórico</span>
+        <span class="badge-topic">Exégesis</span>
+        <span class="badge-topic">Aplicación Espiritual</span>
+      </div>
+
+      <a href="#clases" class="btn btn-warning btn-lg mt-4 px-4 rounded-pill">
+        <i class="fa-solid fa-graduation-cap"></i> Empezar Estudio
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="clases">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Desarrollo de las 4 Clases</h2>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-lg-6">
+        <div class="class-card">
+          <div class="card-header-custom">
+            <div class="icon-box">
+              <i class="fa-solid fa-scroll"></i>
+            </div>
+            <h3>Clase 1</h3>
+            <h4>¿Qué es la Hermenéutica?</h4>
+          </div>
+
+          <div class="p-4">
+            <h5>Objetivo:</h5>
+            <p>Comprender el significado de la hermenéutica y su importancia en la interpretación bíblica.</p>
+
+            <h5>Temas:</h5>
+            <ul>
+              <li>Definición de hermenéutica.</li>
+              <li>Diferencia entre hermenéutica y exégesis.</li>
+              <li>La necesidad de interpretar correctamente.</li>
+              <li>Peligros de sacar textos fuera de contexto.</li>
+            </ul>
+
+            <div class="verse-box">
+              “Procura con diligencia presentarte a Dios aprobado...” — 2 Timoteo 2:15
+            </div>
+
+            <div class="mt-4 p-3 rounded-4" style="background:#f8fafc; border-left:5px solid var(--secondary);">
+              <h5><i class="fa-solid fa-lightbulb"></i> Ejemplo Práctico</h5>
+              <p>
+                Muchas personas usan Filipenses 4:13 (“Todo lo puedo en Cristo que me fortalece”)
+                para hablar de éxito personal o logros humanos, pero el contexto muestra que Pablo
+                estaba hablando sobre aprender a vivir tanto en abundancia como en necesidad.
+              </p>
+            </div>
+
+            <h5 class="mt-4">Preguntas para discutir:</h5>
+            <ol>
+              <li>¿Por qué existen tantas interpretaciones diferentes?</li>
+              <li>¿Qué sucede cuando alguien interpreta sin contexto?</li>
+              <li>¿Por qué debemos estudiar antes de enseñar?</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="class-card">
+          <div class="card-header-custom">
+            <div class="icon-box">
+              <i class="fa-solid fa-landmark"></i>
+            </div>
+            <h3>Clase 2</h3>
+            <h4>Contexto Histórico y Cultural</h4>
+          </div>
+
+          <div class="p-4">
+            <h5>Objetivo:</h5>
+            <p>Aprender cómo el contexto histórico y cultural influye en la interpretación bíblica.</p>
+
+            <h5>Temas:</h5>
+            <ul>
+              <li>Autor, destinatarios y propósito.</li>
+              <li>Costumbres bíblicas.</li>
+              <li>Contexto político y religioso.</li>
+              <li>Ejemplos de malas interpretaciones.</li>
+            </ul>
+
+            <div class="verse-box">
+              “Nunca la profecía fue traída por voluntad humana...” — 2 Pedro 1:21
+            </div>
+
+            <div class="mt-4 p-3 rounded-4" style="background:#f8fafc; border-left:5px solid var(--accent);">
+              <h5><i class="fa-solid fa-book-bible"></i> Texto Bíblico para Analizar</h5>
+              <p><strong>Lucas 10:25-37</strong> — Parábola del Buen Samaritano.</p>
+              <ul>
+                <li>¿Por qué fue impactante que el héroe fuera un samaritano?</li>
+                <li>¿Qué nos enseña sobre el amor al prójimo?</li>
+                <li>¿Qué contexto histórico ayuda a entender mejor esta parábola?</li>
+              </ul>
+            </div>
+
+            <h5 class="mt-4">Ejercicio:</h5>
+            <p>
+              Analizar la parábola del buen samaritano considerando el conflicto histórico entre judíos y samaritanos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="class-card">
+          <div class="card-header-custom">
+            <div class="icon-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <h3>Clase 3</h3>
+            <h4>Principios de Interpretación</h4>
+          </div>
+
+          <div class="p-4">
+            <h5>Objetivo:</h5>
+            <p>Aplicar principios básicos para interpretar correctamente las Escrituras.</p>
+
+            <h5>Principios:</h5>
+            <ul>
+              <li>La Biblia interpreta la Biblia.</li>
+              <li>Interpretación literal y simbólica.</li>
+              <li>Identificación del género literario.</li>
+              <li>Interpretación en contexto.</li>
+              <li>Aplicación espiritual correcta.</li>
+            </ul>
+
+            <div class="verse-box">
+              “Entendiendo primero esto, que ninguna profecía...” — 2 Pedro 1:20
+            </div>
+
+            <div class="mt-4 p-3 rounded-4" style="background:#f8fafc; border-left:5px solid #2563eb;">
+              <h5><i class="fa-solid fa-magnifying-glass"></i> Ejemplo de Género Literario</h5>
+              <p>
+                El libro de Salmos utiliza lenguaje poético y simbólico.
+                Por ejemplo, cuando David dice: “Jehová es mi pastor” (Salmo 23),
+                no significa literalmente que Dios sea un pastor humano, sino que
+                expresa cuidado, guía y protección.
+              </p>
+            </div>
+
+            <h5 class="mt-4">Dinámica:</h5>
+            <p>
+              Dividir al grupo y asignar textos para identificar contexto, género literario y aplicación.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="class-card">
+          <div class="card-header-custom">
+            <div class="icon-box">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <h3>Clase 4</h3>
+            <h4>Aplicación Práctica y Exégesis</h4>
+          </div>
+
+          <div class="p-4">
+            <h5>Objetivo:</h5>
+            <p>Desarrollar la capacidad de analizar y aplicar correctamente un pasaje bíblico.</p>
+
+            <h5>Temas:</h5>
+            <ul>
+              <li>Pasos básicos de exégesis.</li>
+              <li>Observación, interpretación y aplicación.</li>
+              <li>Errores comunes al predicar.</li>
+              <li>Cómo preparar un estudio bíblico.</li>
+            </ul>
+
+            <div class="verse-box">
+              “Escudriñad las Escrituras...” — Juan 5:39
+            </div>
+
+            <div class="mt-4 p-3 rounded-4" style="background:#f8fafc; border-left:5px solid #9333ea;">
+              <h5><i class="fa-solid fa-list-check"></i> Pasos de Exégesis</h5>
+              <ol>
+                <li>Leer el texto varias veces.</li>
+                <li>Identificar palabras claves.</li>
+                <li>Investigar contexto histórico.</li>
+                <li>Analizar el género literario.</li>
+                <li>Comparar con otros textos bíblicos.</li>
+                <li>Aplicar el mensaje correctamente.</li>
+              </ol>
+            </div>
+
+            <h5 class="mt-4">Actividad Final:</h5>
+            <p>
+              Cada estudiante analizará un texto bíblico y expondrá su interpretación usando principios hermenéuticos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="metodos" style="background:white;">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Métodos de Interpretación Bíblica</h2>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-lg-6">
+        <div class="activity-box h-100">
+          <h4><i class="fa-solid fa-book-open-reader"></i> Método Literal</h4>
+          <p>
+            Busca interpretar el texto según su significado natural y normal,
+            considerando gramática, contexto y sentido común.
+          </p>
+
+          <h5>Características:</h5>
+          <ul>
+            <li>Respeta el significado original.</li>
+            <li>Considera contexto histórico y gramatical.</li>
+            <li>Evita interpretaciones fantasiosas.</li>
+          </ul>
+
+          <div class="verse-box">
+            Ejemplo: La resurrección de Cristo se interpreta como un hecho real e histórico.
+            <br><br>
+            <strong>Texto Bíblico:</strong> Mateo 28:5-6
+            <br>
+            “No está aquí, pues ha resucitado...”
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="activity-box h-100">
+          <h4><i class="fa-solid fa-wand-magic-sparkles"></i> Método Alegórico</h4>
+          <p>
+            Busca significados simbólicos o espirituales más profundos detrás del texto.
+          </p>
+
+          <h5>Características:</h5>
+          <ul>
+            <li>Muy usado en la antigüedad.</li>
+            <li>Puede enriquecer enseñanzas espirituales.</li>
+            <li>Debe usarse con cuidado para evitar excesos.</li>
+          </ul>
+
+          <div class="verse-box">
+            Ejemplo: Interpretar Jerusalén como símbolo del pueblo de Dios.
+            <br><br>
+            <strong>Texto Bíblico:</strong> Gálatas 4:24-26
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="activity-box h-100">
+          <h4><i class="fa-solid fa-landmark-dome"></i> Método Histórico</h4>
+          <p>
+            Analiza el contexto histórico, cultural, político y religioso del pasaje.
+          </p>
+
+          <h5>Aspectos importantes:</h5>
+          <ul>
+            <li>Autor y destinatarios.</li>
+            <li>Costumbres de la época.</li>
+            <li>Situación geográfica y social.</li>
+          </ul>
+
+          <div class="verse-box">
+            Ejemplo: Comprender las cartas de Pablo considerando la realidad de las iglesias primitivas.
+            <br><br>
+            <strong>Texto Bíblico:</strong> 1 Corintios 1:10-13
+            <br>
+            Pablo corrige divisiones existentes dentro de la iglesia.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="activity-box h-100">
+          <h4><i class="fa-solid fa-language"></i> Método Gramático-Histórico</h4>
+          <p>
+            Es uno de los métodos más utilizados en la interpretación evangélica.
+            Combina análisis gramatical y contexto histórico.
+          </p>
+
+          <h5>Ventajas:</h5>
+          <ul>
+            <li>Busca el significado original del autor.</li>
+            <li>Respeta idioma y estructura literaria.</li>
+            <li>Evita doctrinas fuera de contexto.</li>
+          </ul>
+
+          <div class="verse-box">
+            Este método busca responder: “¿Qué quiso comunicar el autor inspirado?”
+            <br><br>
+            <strong>Ejemplo:</strong>
+            Analizar Efesios 2:8-9 considerando palabras claves como “gracia”, “fe” y “don”.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="activity-box h-100">
+          <h4><i class="fa-solid fa-cross"></i> Método Devocional</h4>
+          <p>
+            Se enfoca en la aplicación espiritual y práctica del texto para la vida diaria.
+          </p>
+
+          <h5>Objetivos:</h5>
+          <ul>
+            <li>Fortalecer la vida espiritual.</li>
+            <li>Aplicar principios bíblicos.</li>
+            <li>Edificar al creyente.</li>
+          </ul>
+
+          <div class="verse-box">
+            Ejemplo: Leer los Salmos buscando consuelo y dirección espiritual.
+            <br><br>
+            <strong>Texto Bíblico:</strong> Salmo 46:1
+            <br>
+            “Dios es nuestro amparo y fortaleza...”
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="activity-box h-100">
+          <h4><i class="fa-solid fa-triangle-exclamation"></i> Métodos Incorrectos</h4>
+          <p>
+            Existen interpretaciones peligrosas que deben evitarse en el estudio bíblico.
+          </p>
+
+          <h5>Errores comunes:</h5>
+          <ul>
+            <li>Sacar textos fuera de contexto.</li>
+            <li>Interpretar según emociones personales.</li>
+            <li>Ignorar el contexto histórico.</li>
+            <li>Usar versículos para justificar doctrinas incorrectas.</li>
+          </ul>
+
+          <div class="verse-box">
+            “Un texto fuera de contexto se convierte en un pretexto.”
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="principios" style="background:#edf2f8;">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Principios Fundamentales</h2>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-container left">
+        <div class="timeline-content">
+          <h4><i class="fa-solid fa-book"></i> Contexto</h4>
+          <p>
+            Nunca interpretes un versículo aislado. Observa capítulos completos, autor, audiencia y propósito.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-container right">
+        <div class="timeline-content">
+          <h4><i class="fa-solid fa-church"></i> Inspiración Divina</h4>
+          <p>
+            La Biblia fue inspirada por Dios y debe interpretarse con reverencia y dependencia del Espíritu Santo.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-container left">
+        <div class="timeline-content">
+          <h4><i class="fa-solid fa-scale-balanced"></i> Equilibrio</h4>
+          <p>
+            Evita exageraciones doctrinales. Toda enseñanza debe armonizar con el mensaje general de la Escritura.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-container right">
+        <div class="timeline-content">
+          <h4><i class="fa-solid fa-brain"></i> Género Literario</h4>
+          <p>
+            No se interpreta igual una parábola, una profecía, un salmo o una carta apostólica.
+          </p>
+
+          <div class="verse-box mt-3">
+            Ejemplos:
+            <ul class="mt-2">
+              <li><strong>Poesía:</strong> Salmos</li>
+              <li><strong>Profecía:</strong> Isaías</li>
+              <li><strong>Narrativa:</strong> Génesis</li>
+              <li><strong>Epístolas:</strong> Romanos</li>
+              <li><strong>Apocalíptico:</strong> Apocalipsis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="actividades">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Actividades y Dinámicas</h2>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-4">
+        <div class="activity-box">
+          <h4><i class="fa-solid fa-users"></i> Debate Bíblico</h4>
+          <p>
+            Analizar distintas interpretaciones de un pasaje y determinar cuál respeta el contexto.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="activity-box">
+          <h4><i class="fa-solid fa-pen"></i> Taller de Exégesis</h4>
+          <p>
+            Tomar un texto bíblico y desarrollar observación, interpretación y aplicación.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="activity-box">
+          <h4><i class="fa-solid fa-puzzle-piece"></i> Identifica el Error</h4>
+          <p>
+            Presentar ejemplos de textos fuera de contexto y detectar el error hermenéutico.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="accordion mt-5" id="faqAccordion">
+
+      <div class="accordion-item mb-3 border-0 rounded-4 overflow-hidden shadow-sm">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            ¿Qué diferencia hay entre hermenéutica y exégesis?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            La hermenéutica son las reglas y principios de interpretación. La exégesis es la aplicación práctica de esas reglas al analizar un texto.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item mb-3 border-0 rounded-4 overflow-hidden shadow-sm">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            ¿Por qué es importante el contexto?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Porque evita interpretaciones incorrectas y permite comprender el verdadero significado del pasaje.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item mb-3 border-0 rounded-4 overflow-hidden shadow-sm">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            ¿Puede cualquier persona estudiar hermenéutica?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Sí. Todo creyente puede aprender principios básicos para interpretar correctamente las Escrituras.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================
+     ANÁLISIS INTERACTIVO DE VERSÍCULOS
+========================================= -->
+
+<section id="analisis-versiculos"
+         style="background:#f8fafc;">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+🔎 Análisis de Versículos
+</h2>
+
+<p>
+Aprende a desarrollar exégesis y hermenéutica
+paso a paso utilizando textos bíblicos reales.
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<!-- VERSÍCULO 1 -->
+
+<div class="col-lg-6">
+
+<div class="card-box p-4 h-100">
+
+<h4>
+📖 Jeremías 29:11
+</h4>
+
+<div class="verse-box">
+
+“Porque yo sé los pensamientos que tengo acerca
+de vosotros, dice Jehová...”
+
+</div>
+
+<p>
+Texto frecuentemente usado fuera de contexto.
+</p>
+
+<h5>
+Principios Hermenéuticos:
+</h5>
+
+<ul>
+
+<li>Analizar contexto histórico.</li>
+
+<li>Identificar audiencia original.</li>
+
+<li>Determinar propósito del mensaje.</li>
+
+<li>Distinguir aplicación y significado.</li>
+
+</ul>
+
+<button class="btn btn-primary rounded-pill"
+        data-bs-toggle="modal"
+        data-bs-target="#modalJeremias">
+
+    Analizar Versículo
+
+</button>
+
+</div>
+</div>
+
+<!-- VERSÍCULO 2 -->
+
+<div class="col-lg-6">
+
+<div class="card-box p-4 h-100">
+
+<h4>
+📖 Filipenses 4:13
+</h4>
+
+<div class="verse-box">
+
+“Todo lo puedo en Cristo que me fortalece.”
+
+</div>
+
+<p>
+Versículo usado frecuentemente como motivación
+personal moderna.
+</p>
+
+<h5>
+Principios Hermenéuticos:
+</h5>
+
+<ul>
+
+<li>Leer versículos anteriores.</li>
+
+<li>Estudiar contexto de Pablo.</li>
+
+<li>Entender sufrimiento apostólico.</li>
+
+<li>Evitar interpretación triunfalista.</li>
+
+</ul>
+
+<button class="btn btn-success rounded-pill"
+        data-bs-toggle="modal"
+        data-bs-target="#modalFilipenses">
+
+    Analizar Versículo
+
+</button>
+
+</div>
+</div>
+
+<!-- VERSÍCULO 3 -->
+
+<div class="col-lg-6">
+
+<div class="card-box p-4 h-100">
+
+<h4>
+📖 Mateo 18:20
+</h4>
+
+<div class="verse-box">
+
+“Donde están dos o tres congregados...”
+
+</div>
+
+<p>
+Texto comúnmente usado para reuniones pequeñas.
+</p>
+
+<h5>
+Principios Hermenéuticos:
+</h5>
+
+<ul>
+
+<li>Leer contexto disciplinario.</li>
+
+<li>Identificar tema central.</li>
+
+<li>No aislar frases.</li>
+
+<li>Analizar contexto inmediato.</li>
+
+</ul>
+
+<button class="btn btn-warning rounded-pill"
+        data-bs-toggle="modal"
+        data-bs-target="#modalMateo1820">
+
+    Analizar Versículo
+
+</button>
+
+</div>
+</div>
+
+<!-- VERSÍCULO 4 -->
+
+<div class="col-lg-6">
+
+<div class="card-box p-4 h-100">
+
+<h4>
+📖 Apocalipsis 3:20
+</h4>
+
+<div class="verse-box">
+
+“He aquí, yo estoy a la puerta y llamo...”
+
+</div>
+
+<p>
+Frecuentemente usado en evangelismo moderno.
+</p>
+
+<h5>
+Principios Hermenéuticos:
+</h5>
+
+<ul>
+
+<li>Analizar destinatarios originales.</li>
+
+<li>Leer contexto de Laodicea.</li>
+
+<li>Identificar reprensión eclesial.</li>
+
+<li>Evitar sacar textos del contexto.</li>
+
+</ul>
+
+<button class="btn btn-danger rounded-pill"
+        data-bs-toggle="modal"
+        data-bs-target="#modalApocalipsis">
+
+    Analizar Versículo
+
+</button>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- =========================================
+     MODAL JEREMÍAS 29:11
+========================================= -->
+
+<div class="modal fade"
+     id="modalJeremias"
+     tabindex="-1">
+
+<div class="modal-dialog modal-xl modal-dialog-centered">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h5 class="modal-title">
+Análisis Exegético — Jeremías 29:11
+</h5>
+
+<button class="btn-close"
+        data-bs-dismiss="modal">
+</button>
+
+</div>
+
+<div class="modal-body">
+
+<h4>📜 Contexto Histórico</h4>
+
+<p>
+Israel estaba en cautiverio babilónico.
+El mensaje fue dado específicamente
+a los exiliados.
+</p>
+
+<h4>📖 Contexto Literario</h4>
+
+<p>
+El capítulo habla sobre los 70 años
+de cautiverio.
+</p>
+
+<h4>⚠ Error Común</h4>
+
+<p>
+Usarlo como promesa automática
+de prosperidad inmediata.
+</p>
+
+<h4>✅ Aplicación Correcta</h4>
+
+<p>
+Dios sigue siendo soberano incluso
+en tiempos difíciles.
+</p>
+
+<div class="alert alert-primary">
+
+Principio:
+Nunca debemos separar una promesa
+de su contexto original.
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- =========================================
+     MODAL FILIPENSES 4:13
+========================================= -->
+
+<div class="modal fade"
+     id="modalFilipenses"
+     tabindex="-1">
+
+<div class="modal-dialog modal-xl modal-dialog-centered">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h5 class="modal-title">
+Análisis Exegético — Filipenses 4:13
+</h5>
+
+<button class="btn-close"
+        data-bs-dismiss="modal">
+</button>
+
+</div>
+
+<div class="modal-body">
+
+<h4>📜 Contexto Apostólico</h4>
+
+<p>
+Pablo habla de contentamiento
+en abundancia y escasez.
+</p>
+
+<h4>📖 Contexto Inmediato</h4>
+
+<p>
+El tema no es éxito humano ilimitado,
+sino fortaleza espiritual.
+</p>
+
+<h4>⚠ Error Común</h4>
+
+<p>
+Usarlo como fórmula de éxito absoluto.
+</p>
+
+<h4>✅ Aplicación Correcta</h4>
+
+<p>
+Cristo fortalece al creyente
+para soportar cualquier circunstancia.
+</p>
+
+<div class="alert alert-success">
+
+Principio:
+La Biblia debe interpretarse
+según el contexto completo.
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- =========================================
+     MODAL MATEO 18:20
+========================================= -->
+
+<div class="modal fade"
+     id="modalMateo1820"
+     tabindex="-1">
+
+<div class="modal-dialog modal-xl modal-dialog-centered">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h5 class="modal-title">
+Análisis Exegético — Mateo 18:20
+</h5>
+
+<button class="btn-close"
+        data-bs-dismiss="modal">
+</button>
+
+</div>
+
+<div class="modal-body">
+
+<h4>📜 Contexto</h4>
+
+<p>
+Jesús está enseñando sobre disciplina
+eclesiástica y autoridad espiritual.
+</p>
+
+<h4>📖 Interpretación Correcta</h4>
+
+<p>
+La presencia de Cristo respalda
+la autoridad de la iglesia
+cuando actúa bíblicamente.
+</p>
+
+<h4>⚠ Error Común</h4>
+
+<p>
+Pensar que Jesús solo está presente
+si hay mínimo dos personas.
+</p>
+
+<div class="alert alert-warning">
+
+Principio:
+El contexto inmediato controla
+el significado del versículo.
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- =========================================
+     MODAL APOCALIPSIS 3:20
+========================================= -->
+
+<div class="modal fade"
+     id="modalApocalipsis"
+     tabindex="-1">
+
+<div class="modal-dialog modal-xl modal-dialog-centered">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h5 class="modal-title">
+Análisis Exegético — Apocalipsis 3:20
+</h5>
+
+<button class="btn-close"
+        data-bs-dismiss="modal">
+</button>
+
+</div>
+
+<div class="modal-body">
+
+<h4>📜 Contexto Histórico</h4>
+
+<p>
+Jesús habla a la iglesia de Laodicea,
+una iglesia tibia espiritualmente.
+</p>
+
+<h4>📖 Contexto Teológico</h4>
+
+<p>
+Cristo está llamando a la iglesia
+al arrepentimiento.
+</p>
+
+<h4>⚠ Error Común</h4>
+
+<p>
+Usarlo únicamente como texto evangelístico.
+</p>
+
+<h4>✅ Aplicación Correcta</h4>
+
+<p>
+Cristo desea comunión verdadera
+con su iglesia.
+</p>
+
+<div class="alert alert-danger">
+
+Principio:
+La aplicación moderna no debe eliminar
+el significado original.
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<section id="extras" style="background:#f8fafc;">
+  <div class="container">
+  
+  <div class="col-lg-12">
+        <div class="activity-box">
+          <h4><i class="fa-solid fa-screwdriver-wrench"></i> Herramientas Recomendadas para el Estudio Bíblico</h4>
+
+          <div class="row mt-4">
+
+            <div class="col-md-3 mb-3">
+              <div class="text-center p-4 rounded-4 border bg-light h-100">
+                <i class="fa-solid fa-book fa-2x mb-3 text-primary"></i>
+                <h5>Concordancia</h5>
+                <p>Permite buscar palabras y temas en toda la Biblia.</p>
+              </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <div class="text-center p-4 rounded-4 border bg-light h-100">
+                <i class="fa-solid fa-globe fa-2x mb-3 text-success"></i>
+                <h5>Diccionario Bíblico</h5>
+                <p>Ayuda a comprender términos, lugares y personajes.</p>
+              </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <div class="text-center p-4 rounded-4 border bg-light h-100">
+                <i class="fa-solid fa-scroll fa-2x mb-3 text-warning"></i>
+                <h5>Comentarios Bíblicos</h5>
+                <p>Explican contexto histórico y doctrinal.</p>
+              </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <div class="text-center p-4 rounded-4 border bg-light h-100">
+                <i class="fa-solid fa-language fa-2x mb-3 text-danger"></i>
+                <h5>Interlineales</h5>
+                <p>Permiten observar palabras originales hebreas y griegas.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+    <div class="section-title">
+      <h2>Herramientas Avanzadas de Enseñanza</h2>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-lg-6">
+        <div class="activity-box h-100">
+          <h4><i class="fa-solid fa-map-location-dot"></i> Mapas Bíblicos</h4>
+          <p>
+            Comprender la geografía bíblica ayuda a interpretar correctamente muchos pasajes.
+          </p>
+
+          <ul>
+            <li>Jerusalén y Judea</li>
+            <li>Galilea y Samaria</li>
+            <li>Viajes misioneros de Pablo</li>
+            <li>Imperio Romano</li>
+          </ul>
+
+          <div class="verse-box">
+            Ejemplo: Entender la distancia entre Jerusalén y Jericó ayuda a comprender mejor la parábola del Buen Samaritano.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="activity-box h-100">
+          <h4><i class="fa-solid fa-clock"></i> Línea de Tiempo Bíblica</h4>
+          <p>
+            Una cronología ayuda a visualizar los eventos y períodos importantes de la Biblia.
+          </p>
+
+          <div class="timeline-mini mt-4">
+            <div class="d-flex justify-content-between flex-wrap gap-2">
+              <span class="badge bg-primary p-3">Patriarcas</span>
+              <span class="badge bg-success p-3">Reino de Israel</span>
+              <span class="badge bg-warning text-dark p-3">Exilio</span>
+              <span class="badge bg-danger p-3">Ministerio de Cristo</span>
+              <span class="badge bg-dark p-3">Iglesia Primitiva</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="activity-box h-100">
+          <h4><i class="fa-solid fa-scale-balanced"></i> Exégesis vs Eiségesis</h4>
+
+          <table class="table table-bordered mt-3">
+            <thead class="table-dark">
+              <tr>
+                <th>Exégesis</th>
+                <th>Eiségesis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Extrae el significado del texto.</td>
+                <td>Introduce ideas personales al texto.</td>
+              </tr>
+              <tr>
+                <td>Respeta contexto.</td>
+                <td>Ignora contexto.</td>
+              </tr>
+              <tr>
+                <td>Busca intención original.</td>
+                <td>Busca apoyar opiniones propias.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="verse-box">
+            La interpretación sana siempre debe surgir del texto y no de emociones personales.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="activity-box h-100">
+          <h4><i class="fa-solid fa-circle-question"></i> Quiz de Hermenéutica</h4>
+
+          <div class="mt-4">
+            <p><strong>1.</strong> ¿Qué estudia la hermenéutica?</p>
+            <ul>
+              <li>a) La música bíblica</li>
+              <li>b) La interpretación bíblica ✅</li>
+              <li>c) La arqueología</li>
+            </ul>
+
+            <p><strong>2.</strong> ¿Qué significa interpretar un texto fuera de contexto?</p>
+            <ul>
+              <li>a) Interpretarlo correctamente</li>
+              <li>b) Ignorar el significado original ✅</li>
+              <li>c) Leerlo completo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-12">
+        <div class="activity-box">
+          <h4><i class="fa-solid fa-triangle-exclamation"></i> Errores Doctrinales Comunes</h4>
+
+          <div class="row mt-4">
+            <div class="col-md-4 mb-3">
+              <div class="p-3 rounded-4 bg-light border h-100">
+                <h5>Textos Aislados</h5>
+                <p>
+                  Construir doctrinas usando un solo versículo sin comparar con el resto de la Escritura.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <div class="p-3 rounded-4 bg-light border h-100">
+                <h5>Sensacionalismo</h5>
+                <p>
+                  Interpretar profecías basándose únicamente en noticias actuales o emociones.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <div class="p-3 rounded-4 bg-light border h-100">
+                <h5>Interpretación Mística</h5>
+                <p>
+                  Buscar códigos secretos o significados ocultos sin fundamento bíblico.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+</section>
+
+
+
+<!-- =========================================
+     HERMENÉUTICA APLICADA
+========================================= -->
+
+<section id="parabolas-profecias"
+         style="background:#eef4ff;">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Hermenéutica Aplicada a Parábolas y Profecías</h2>
+</div>
+
+<div class="row g-4">
+
+<!-- PARÁBOLAS -->
+
+<div class="col-lg-6">
+
+<div class="activity-box p-4 h-100">
+
+<h4>
+📖 Interpretación de Parábolas
+</h4>
+
+<p>
+Las parábolas enseñan verdades espirituales
+mediante relatos cotidianos.
+</p>
+
+<h5>Principios Importantes</h5>
+
+<ul>
+
+<li>Buscar la idea principal.</li>
+
+<li>No alegorizar excesivamente.</li>
+
+<li>Analizar contexto histórico.</li>
+
+<li>Identificar audiencia original.</li>
+
+<li>Buscar aplicación espiritual correcta.</li>
+
+</ul>
+
+<div class="verse-box">
+
+<strong>Ejemplo:</strong>
+
+<br><br>
+
+Mateo 13 — Parábola del Sembrador
+
+</div>
+
+<button class="btn btn-primary rounded-pill mt-3"
+        data-bs-toggle="modal"
+        data-bs-target="#modalParabola">
+
+    Analizar Parábola
+
+</button>
+
+</div>
+</div>
+
+<!-- PROFECÍAS -->
+
+<div class="col-lg-6">
+
+<div class="activity-box p-4 h-100">
+
+<h4>
+🔥 Interpretación de Profecías
+</h4>
+
+<p>
+La profecía bíblica combina elementos
+históricos, simbólicos y escatológicos.
+</p>
+
+<h5>Principios Importantes</h5>
+
+<ul>
+
+<li>Comparar textos paralelos.</li>
+
+<li>Analizar símbolos bíblicos.</li>
+
+<li>Respetar contexto histórico.</li>
+
+<li>Evitar especulación extrema.</li>
+
+<li>Buscar cumplimiento bíblico.</li>
+
+</ul>
+
+<div class="verse-box">
+
+<strong>Ejemplo:</strong>
+
+<br><br>
+
+Mateo 24 y Daniel 7
+
+</div>
+
+<button class="btn btn-danger rounded-pill mt-3"
+        data-bs-toggle="modal"
+        data-bs-target="#modalProfecia">
+
+    Analizar Profecía
+
+</button>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+
+
+<!-- =========================================
+     MODALES
+========================================= -->
+
+<div class="modal fade"
+     id="modalParabola"
+     tabindex="-1">
+
+<div class="modal-dialog modal-lg modal-dialog-centered">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h5 class="modal-title">
+Parábola del Sembrador
+</h5>
+
+<button class="btn-close"
+        data-bs-dismiss="modal">
+</button>
+
+</div>
+
+<div class="modal-body">
+
+<p>
+Jesús enseña que las personas reaccionan
+de forma diferente a la Palabra de Dios.
+</p>
+
+<ul>
+
+<li>Camino = corazón endurecido</li>
+
+<li>Pedregales = emoción superficial</li>
+
+<li>Espinos = afanes del mundo</li>
+
+<li>Buena tierra = corazón receptivo</li>
+
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade"
+     id="modalProfecia"
+     tabindex="-1">
+
+<div class="modal-dialog modal-lg modal-dialog-centered">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h5 class="modal-title">
+Interpretación Profética
+</h5>
+
+<button class="btn-close"
+        data-bs-dismiss="modal">
+</button>
+
+</div>
+
+<div class="modal-body">
+
+<p>
+Muchas profecías poseen doble cumplimiento:
+uno cercano y otro futuro.
+</p>
+
+<div class="verse-box">
+
+Mateo 24 combina:
+
+<ul>
+
+<li>Destrucción de Jerusalén</li>
+
+<li>Gran Tribulación</li>
+
+<li>Segunda Venida</li>
+
+</ul>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- =========================================
+     QUIZ BÍBLICO INTERACTIVO
+========================================= -->
+
+<section id="quiz-biblico">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Quiz Bíblico Interactivo</h2>
+</div>
+
+<!-- BARRA QUIZ -->
+
+<div class="progress mb-4"
+     style="height:30px;">
+
+<div id="barraQuiz"
+     class="progress-bar progress-bar-striped progress-bar-animated"
+     style="width:0%">
+
+0%
+
+</div>
+</div>
+
+<form id="quizForm">
+
+<!-- PREGUNTA 1 -->
+
+<div class="card-box p-4 mb-4">
+
+<h5>
+1. ¿Qué estudia la hermenéutica?
+</h5>
+
+<label>
+<input type="radio" name="q1" value="a">
+ Filosofía
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q1" value="b">
+ Interpretación bíblica
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q1" value="c">
+ Literatura secular
+</label>
+
+</div>
+
+<!-- PREGUNTA 2 -->
+
+<div class="card-box p-4 mb-4">
+
+<h5>
+2. ¿Qué método interpreta literalmente?
+</h5>
+
+<label>
+<input type="radio" name="q2" value="a">
+ Alegórico
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q2" value="b">
+ Místico
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q2" value="c">
+ Gramático-histórico
+</label>
+
+</div>
+
+<!-- PREGUNTA 3 -->
+
+<div class="card-box p-4 mb-4">
+
+<h5>
+3. ¿Qué libro contiene muchas profecías?
+</h5>
+
+<label>
+<input type="radio" name="q3" value="a">
+ Daniel
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q3" value="b">
+ Rut
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q3" value="c">
+ Filemón
+</label>
+
+</div>
+
+<!-- PREGUNTA 4 -->
+
+<div class="card-box p-4 mb-4">
+
+<h5>
+4. ¿Qué NO debe hacerse con parábolas?
+</h5>
+
+<label>
+<input type="radio" name="q4" value="a">
+ Estudiar contexto
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q4" value="b">
+ Buscar enseñanza central
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q4" value="c">
+ Analizar audiencia
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q4" value="d">
+ Alegorizar excesivamente
+</label>
+
+</div>
+
+<!-- PREGUNTA 5 -->
+
+<div class="card-box p-4 mb-4">
+
+<h5>
+5. ¿Quién escribió Apocalipsis?
+</h5>
+
+<label>
+<input type="radio" name="q5" value="a">
+ Pablo
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q5" value="b">
+ Juan
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q5" value="c">
+ Pedro
+</label>
+
+</div>
+
+<!-- BOTÓN -->
+
+<button type="button"
+        class="btn btn-success btn-lg rounded-pill"
+        onclick="corregirQuiz()">
+
+    Finalizar Quiz
+
+</button>
+
+</form>
+
+<!-- RESULTADO -->
+
+<div id="resultadoQuiz"></div>
+
+
+
+<section id="conclusion" style="background:linear-gradient(135deg,var(--primary),#16263d); color:white;">
+  <div class="container text-center">
+
+    <h2 class="fw-bold mb-4">Conclusión del Curso</h2>
+
+    <p class="lead mx-auto" style="max-width:900px;">
+      La hermenéutica bíblica no es solamente una herramienta académica,
+      sino una disciplina espiritual que nos ayuda a comprender correctamente
+      la Palabra de Dios y aplicarla con fidelidad.
+    </p>
+
+    <div class="row mt-5">
+      <div class="col-md-4 mb-4">
+        <div class="glass h-100">
+          <i class="fa-solid fa-book-open fa-3x mb-3"></i>
+          <h4>Interpretar</h4>
+          <p>Comprender el significado correcto del texto.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="glass h-100">
+          <i class="fa-solid fa-brain fa-3x mb-3"></i>
+          <h4>Analizar</h4>
+          <p>Examinar contexto, cultura y propósito.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="glass h-100">
+          <i class="fa-solid fa-fire fa-3x mb-3"></i>
+          <h4>Aplicar</h4>
+          <p>Vivir y enseñar correctamente la verdad bíblica.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section id="certificado" style="background:linear-gradient(135deg,#1e3a5f,#0f172a); color:white;">
+  <div class="container text-center">
+
+    <h2 class="fw-bold mb-4">Certificado del Curso</h2>
+
+    <div class="glass mx-auto" style="max-width:900px;">
+      <h1 class="mb-4">CERTIFICADO</h1>
+      <p>Se certifica que:</p>
+      <h2 class="fw-bold">________________________</h2>
+      <p class="mt-4">
+        Ha completado satisfactoriamente el curso de
+        <strong>Hermenéutica Bíblica</strong>.
+      </p>
+
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <p>______________________</p>
+          <small>Instructor</small>
+        </div>
+
+        <div class="col-md-6">
+          <p>______________________</p>
+          <small>Fecha</small>
+        </div>
+      </div>
+
+
+<button class="btn btn-danger rounded-pill"
+        onclick="descargarPDFProfesional()">
+
+    📄 Descargar PDF 
+
+</button>
+	  
+	  
+	  
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<section id="panel-clases">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Panel para Nuevas Clases</h2>
+</div>
+
+<div class="card-box p-4 mb-5">
+
+<div class="mb-3">
+<label>Título</label>
+<input type="text"
+       id="tituloClase"
+       class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Descripción</label>
+<textarea id="descripcionClase"
+          class="form-control"></textarea>
+</div>
+
+<button class="btn btn-success rounded-pill"
+        onclick="agregarClase()">
+    Agregar Clase
+</button>
+
+<button class="btn btn-primary rounded-pill"
+        onclick="exportarClases()">
+    Exportar Clases
+</button>
+
+</div>
+
+<div class="row" id="contenedorClases"></div>
+
+</div>
+</section>
+
+<!-- =========================================
+     ENCABEZADO PROFESIONAL PDF
+========================================= -->
+
+<div class="pdf-header d-none d-print-block">
+
+<h1>
+📖 Curso Profesional de Hermenéutica Bíblica
+</h1>
+
+<p>
+Interpretación Bíblica • Exégesis • Métodos Hermenéuticos
+</p>
+
+<p>
+Ministerio de Formación Bíblica
+</p>
+
+</div>
+
+<!-- =========================================
+     PIE DE PÁGINA PDF
+========================================= -->
+
+<div class="pdf-footer d-none d-print-block">
+
+Curso de Hermenéutica Bíblica —
+Material generado para enseñanza cristiana
+
+</div>
+
+
+
+
+<footer>
+  <div class="container">
+    <h4>Curso de Hermenéutica Bíblica</h4>
+    <p>
+      Material preparado para enseñanza cristiana, discipulado e institutos bíblicos.
+    </p>
+    <small>Desarrollado con HTML5, Bootstrap y mucho propósito para enseñar.</small>
+  </div>
+</footer>
+
+
+<a href="#inicio" class="floating-btn">
+  <i class="fa-solid fa-arrow-up"></i>
+</a>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+function descargarPDFProfesional(){
+
+    let tituloOriginal=document.title;
+
+    document.title='Curso-Hermeneutica-Biblica';
+
+    window.print();
+
+    document.title=tituloOriginal;
+}
+
+
+
+/* =========================================
+   MODO OSCURO
+========================================= */
+
+function toggleDarkMode(){
+
+    document.body.classList.toggle('dark-mode');
+
+    if(document.body.classList.contains('dark-mode')){
+        localStorage.setItem('modo','oscuro');
+    }else{
+        localStorage.setItem('modo','claro');
+    }
+}
+
+/* =========================================
+   CARGA INICIAL
+========================================= */
+
+window.onload=function(){
+
+    if(localStorage.getItem('modo')==='oscuro'){
+        document.body.classList.add('dark-mode');
+    }
+
+    cargarClases();
+}
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+const observer=new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+        }
+
+    });
+
+});
+
+document.querySelectorAll('.fade-in').forEach(el=>{
+    observer.observe(el);
+});
+
+/* =========================================
+   QUIZ SIMPLE
+========================================= */
+
+function mostrarResultado(){
+
+    document.getElementById('resultadoQuiz').innerHTML=`
+    
+    <div class="alert alert-success mt-4">
+
+        <h4>¡Excelente!</h4>
+
+        <p>
+        Has completado correctamente el quiz
+        de hermenéutica bíblica.
+        </p>
+
+    </div>
+
+    `;
+}
+
+/* =========================================
+   PANEL DINÁMICO
+========================================= */
+
+function agregarClase(){
+
+    let titulo=document.getElementById('tituloClase').value;
+
+    let descripcion=document.getElementById('descripcionClase').value;
+
+    if(titulo==='' || descripcion===''){
+
+        alert('Completa todos los campos');
+
+        return;
+    }
+
+    let clases=
+        JSON.parse(
+            localStorage.getItem('clasesHermeneutica')
+        ) || [];
+
+    clases.push({
+        titulo,
+        descripcion
+    });
+
+    localStorage.setItem(
+        'clasesHermeneutica',
+        JSON.stringify(clases)
+    );
+
+    cargarClases();
+
+    document.getElementById('tituloClase').value='';
+    document.getElementById('descripcionClase').value='';
+}
+
+function cargarClases(){
+
+    let contenedor=
+        document.getElementById('contenedorClases');
+
+    if(!contenedor)return;
+
+    contenedor.innerHTML='';
+
+    let clases=
+        JSON.parse(
+            localStorage.getItem('clasesHermeneutica')
+        ) || [];
+
+    clases.forEach((clase,index)=>{
+
+        contenedor.innerHTML+=`
+
+        <div class="col-md-6 col-lg-4 mb-4">
+
+            <div class="activity-box h-100">
+
+                <h4>${clase.titulo}</h4>
+
+                <p>${clase.descripcion}</p>
+
+                <button class="btn btn-danger btn-sm rounded-pill"
+                        onclick="eliminarClase(${index})">
+
+                    Eliminar
+
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+    });
+}
+
+function eliminarClase(index){
+
+    let clases=
+        JSON.parse(
+            localStorage.getItem('clasesHermeneutica')
+        ) || [];
+
+    clases.splice(index,1);
+
+    localStorage.setItem(
+        'clasesHermeneutica',
+        JSON.stringify(clases)
+    );
+
+    cargarClases();
+}
+
+function exportarClases(){
+
+    let clases=
+        JSON.parse(
+            localStorage.getItem('clasesHermeneutica')
+        ) || [];
+
+    let contenido=
+        JSON.stringify(clases,null,2);
+
+    let blob=
+        new Blob([contenido],
+        {type:'application/json'});
+
+    let enlace=
+        document.createElement('a');
+
+    enlace.href=
+        URL.createObjectURL(blob);
+
+    enlace.download='clases-hermeneutica.json';
+
+    enlace.click();
+}
+
+/* =========================================
+   DESCARGA PDF
+========================================= */
+
+function descargarPDF(){
+    window.print();
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang='es'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Linea Tiempo Animada</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<style>:root{--gold:#D4AF37;--red:#C8102E}body{font-family:Inter,system-ui, -apple-system,'Segoe UI',Roboto,Arial;background:#fff;padding:1rem}.timeline{position:relative}.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:4px;background:var(--gold);transform:translateX(-50%)}.item{width:50%;padding:1rem 2rem;box-sizing:border-box;opacity:0;transform:translateY(30px);transition:all .7s}.item.visible{opacity:1;transform:translateY(0)}.left{left:0;text-align:right}.right{left:50%;text-align:left}.card{border-radius:12px;border:2px solid var(--gold)}</style></head><body><div class="container"><h2 style="color:var(--red)">Línea de Tiempo</h2><div class="timeline">
+<div class="item left"><div class="card p-3"><h5>Tiempo de la Iglesia</h5><p>Evangelio proclamado en el mundo.</p></div></div>
+<div class="item right"><div class="card p-3"><h5>Arrebatamiento</h5><p>Transformación y reunión con Cristo.</p></div></div>
+<div class="item left"><div class="card p-3"><h5>Tribunal de Cristo</h5><p>Recompensas por obras.</p></div></div>
+<div class="item right"><div class="card p-3"><h5>Bodas del Cordero</h5><p>Celebración espiritual de la unión con Cristo.</p></div></div>
+<div class="item left"><div class="card p-3"><h5>Sellos</h5><p>Juicios progresivos</p></div></div>
+<div class="item right"><div class="card p-3"><h5>Trompetas</h5><p>Juicios más intensos</p></div></div>
+<div class="item left"><div class="card p-3"><h5>Copas</h5><p>Juicios consumados</p></div></div>
+<div class="item right"><div class="card p-3"><h5>Segunda Venida</h5><p>Regreso visible de Cristo</p></div></div>
+<div class="item left"><div class="card p-3"><h5>Mileno</h5><p>Reinado de Cristo 1000 años</p></div></div>
+<div class="item right"><div class="card p-3"><h5>Juicio Final</h5><p>Nuevo cielo y nueva tierra</p></div></div>
+</div></div><script>function show(){document.querySelectorAll('.item').forEach((el,i)=>setTimeout(()=>el.classList.add('visible'),i*300))}window.addEventListener('load',show)</script></body></html>

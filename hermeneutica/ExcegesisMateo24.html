@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exégesis de Mateo 24</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --primary:#0f172a;
+ --secondary:#f59e0b;
+ --accent:#2563eb;
+ --light:#f8fafc;
+}
+
+*{
+ font-family:'Poppins',sans-serif;
+ scroll-behavior:smooth;
+}
+
+body{
+ background:#f1f5f9;
+ overflow-x:hidden;
+}
+
+.hero{
+ min-height:100vh;
+ background:linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.82)),url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=1600&auto=format&fit=crop');
+ background-size:cover;
+ background-position:center;
+ display:flex;
+ align-items:center;
+ color:white;
+}
+
+.glass{
+ background:rgba(255,255,255,.08);
+ border:1px solid rgba(255,255,255,.15);
+ backdrop-filter:blur(12px);
+ border-radius:30px;
+ padding:50px;
+}
+
+.hero h1{
+ font-size:4rem;
+ font-weight:700;
+}
+
+.navbar{
+ background:rgba(15,23,42,.96)!important;
+ backdrop-filter:blur(10px);
+}
+
+section{
+ padding:90px 0;
+}
+
+.section-title{
+ text-align:center;
+ margin-bottom:60px;
+}
+
+.section-title h2{
+ font-weight:700;
+ color:var(--primary);
+}
+
+.card-box{
+ background:white;
+ border-radius:25px;
+ overflow:hidden;
+ box-shadow:0 10px 25px rgba(0,0,0,.08);
+ transition:.4s;
+ height:100%;
+}
+
+.card-box:hover{
+ transform:translateY(-8px);
+}
+
+.card-header-custom{
+ background:linear-gradient(135deg,var(--primary),var(--accent));
+ color:white;
+ padding:30px;
+}
+
+.content-box{
+ padding:35px;
+}
+
+.icon-box{
+ width:70px;
+ height:70px;
+ border-radius:50%;
+ background:rgba(255,255,255,.15);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:2rem;
+ margin-bottom:20px;
+}
+
+.verse-box{
+ background:#eef4ff;
+ border-left:5px solid var(--accent);
+ padding:20px;
+ border-radius:15px;
+ margin:20px 0;
+}
+
+.greek-box{
+ background:#111827;
+ color:#facc15;
+ padding:20px;
+ border-radius:15px;
+ font-size:1.1rem;
+ margin:20px 0;
+}
+
+.timeline-item{
+ background:white;
+ border-radius:20px;
+ padding:30px;
+ text-align:center;
+ box-shadow:0 8px 20px rgba(0,0,0,.08);
+ height:100%;
+}
+
+.fade-in{
+ opacity:0;
+ transform:translateY(40px);
+ transition:all .8s ease;
+}
+
+.fade-in.visible{
+ opacity:1;
+ transform:translateY(0);
+}
+
+.dark-toggle{
+ position:fixed;
+ top:90px;
+ right:20px;
+ z-index:9999;
+}
+
+.dark-mode{
+ background:#111827!important;
+ color:white!important;
+}
+
+.dark-mode .card-box,
+.dark-mode .timeline-item,
+.dark-mode .accordion-item,
+.dark-mode .modal-content{
+ background:#1f2937!important;
+ color:white!important;
+}
+
+.dark-mode .section-title h2{
+ color:white!important;
+}
+
+footer{
+ background:#0f172a;
+ color:white;
+ text-align:center;
+ padding:40px 0;
+}
+
+@media(max-width:768px){
+ .hero h1{
+  font-size:2.4rem;
+ }
+}
+</style>
+</head>
+<body>
+
+<button class="btn btn-dark rounded-pill dark-toggle" onclick="toggleDarkMode()">
+<i class="fa-solid fa-moon"></i> Modo Oscuro
+</button>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand fw-bold" href="#inicio">
+<i class="fa-solid fa-book-bible"></i> Mateo 24
+</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#contexto">Contexto</a></li>
+<li class="nav-item"><a class="nav-link" href="#estructura">Estructura</a></li>
+<li class="nav-item"><a class="nav-link" href="#exegesis">Exégesis</a></li>
+<li class="nav-item"><a class="nav-link" href="#aplicacion">Aplicación</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<section class="hero" id="inicio">
+<div class="container">
+<div class="glass fade-in visible">
+<h1>Exégesis de Mateo 24</h1>
+<h3 class="mt-4">El Discurso del Monte de los Olivos</h3>
+
+<p class="lead mt-4">
+Un estudio exegético completo del discurso escatológico de Jesucristo, desarrollado con análisis histórico, hermenéutico, profético y teológico.
+</p>
+
+<div class="d-flex flex-wrap gap-2 mt-4">
+<span class="badge bg-warning text-dark p-3">Escatología</span>
+<span class="badge bg-primary p-3">Profecía</span>
+<span class="badge bg-danger p-3">Hermenéutica</span>
+<span class="badge bg-success p-3">Exégesis</span>
+</div>
+
+<a href="#contexto" class="btn btn-warning btn-lg rounded-pill mt-4">
+<i class="fa-solid fa-book-open"></i> Iniciar Estudio
+</a>
+</div>
+</div>
+</section>
+
+<section id="contexto">
+<div class="container">
+<div class="section-title">
+<h2>1. Contexto General</h2>
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-4">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-user fa-3x text-primary mb-4"></i>
+<h4>Autor</h4>
+<p>Mateo, uno de los doce apóstoles, escribe enfatizando a Jesús como el Mesías prometido.</p>
+</div>
+</div>
+
+<div class="col-lg-4">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-mountain fa-3x text-success mb-4"></i>
+<h4>Lugar</h4>
+<p>Jesús pronuncia este discurso desde el Monte de los Olivos frente al templo de Jerusalén.</p>
+</div>
+</div>
+
+<div class="col-lg-4">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-landmark-dome fa-3x text-danger mb-4"></i>
+<h4>Contexto</h4>
+<p>Jesús acaba de anunciar la destrucción del templo y el juicio sobre Jerusalén.</p>
+</div>
+</div>
+
+</div>
+
+<div class="card-box fade-in mt-5">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-circle-question"></i></div>
+<h3>Las Tres Preguntas de los Discípulos</h3>
+</div>
+<div class="content-box">
+
+<div class="verse-box">
+<strong>Mateo 24:3</strong><br><br>
+1. ¿Cuándo serán estas cosas?<br>
+2. ¿Qué señal habrá de tu venida?<br>
+3. ¿Y del fin del siglo?
+</div>
+
+<p>
+Estas preguntas forman la estructura del capítulo completo y explican por qué Jesús mezcla acontecimientos históricos y escatológicos.
+</p>
+
+<button class="btn btn-primary rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#modalDobleCumplimiento">
+Explicación del Doble Cumplimiento
+</button>
+
+</div>
+</div>
+</div>
+</section>
+
+<section id="estructura" style="background:#eef4ff;">
+<div class="container">
+<div class="section-title">
+<h2>2. Estructura del Capítulo</h2>
+</div>
+
+<div class="accordion fade-in" id="accordionMain">
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#c1">
+Mateo 24:1-2 — Destrucción del Templo
+</button>
+</h2>
+<div id="c1" class="accordion-collapse collapse show">
+<div class="accordion-body">
+Jesús profetiza el juicio sobre Jerusalén y la destrucción del templo.
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c2">
+Mateo 24:3-14 — Principio de Dolores
+</button>
+</h2>
+<div id="c2" class="accordion-collapse collapse">
+<div class="accordion-body">
+Guerras, hambres, terremotos, persecución y engaño espiritual.
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c3">
+Mateo 24:15-28 — Gran Tribulación
+</button>
+</h2>
+<div id="c3" class="accordion-collapse collapse">
+<div class="accordion-body">
+La abominación desoladora y el tiempo de gran angustia.
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c4">
+Mateo 24:29-31 — Venida Gloriosa de Cristo
+</button>
+</h2>
+<div id="c4" class="accordion-collapse collapse">
+<div class="accordion-body">
+Manifestación gloriosa y visible del Hijo del Hombre.
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c5">
+Mateo 24:32-51 — Vigilancia y Preparación
+</button>
+</h2>
+<div id="c5" class="accordion-collapse collapse">
+<div class="accordion-body">
+La parábola de la higuera y la exhortación a estar preparados.
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="exegesis">
+<div class="container">
+<div class="section-title">
+<h2>3. Exégesis Versículo por Versículo</h2>
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-12">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-building-columns"></i></div>
+<h3>Mateo 24:1-2 — La Destrucción del Templo</h3>
+</div>
+<div class="content-box">
+
+<div class="verse-box">
+“No quedará aquí piedra sobre piedra...”
+</div>
+
+<p>
+Jesús anuncia proféticamente la destrucción del templo de Jerusalén.
+</p>
+
+<ul>
+<li>Cumplimiento histórico en el año 70 d.C.</li>
+<li>Destrucción ejecutada por el general Tito.</li>
+<li>Juicio sobre el sistema religioso incrédulo.</li>
+</ul>
+
+<div class="alert alert-warning mt-4">
+Principio Hermenéutico: Jesús mezcla eventos cercanos y futuros en una misma profecía.
+</div>
+
+<button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#modalTemplo">
+Ver Destrucción del Templo
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-earth-americas"></i></div>
+<h3>Mateo 24:4-8 — Principio de Dolores</h3>
+</div>
+<div class="content-box">
+
+<div class="verse-box">
+“Todo esto será principio de dolores.”
+</div>
+
+<p>
+Jesús describe señales previas al fin:
+</p>
+
+<ul>
+<li>Falsos cristos.</li>
+<li>Guerras.</li>
+<li>Rumores de guerras.</li>
+<li>Hambres.</li>
+<li>Pestes.</li>
+<li>Terremotos.</li>
+</ul>
+
+<div class="greek-box">
+ὠδίν (odin)
+</div>
+
+<p>
+La imagen griega representa dolores de parto:
+</p>
+
+<ul>
+<li>Incremento progresivo.</li>
+<li>Intensidad creciente.</li>
+<li>Cercanía del acontecimiento final.</li>
+</ul>
+
+<button class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalDolores">
+¿Qué Significa “Dolores de Parto”?
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-fire"></i></div>
+<h3>Mateo 24:9-14 — Persecución y Apostasía</h3>
+</div>
+<div class="content-box">
+
+<div class="verse-box">
+“El amor de muchos se enfriará...”
+</div>
+
+<p>
+Jesús anuncia:
+</p>
+
+<ul>
+<li>Persecución mundial.</li>
+<li>Traición entre creyentes.</li>
+<li>Apostasía espiritual.</li>
+<li>Enfriamiento del amor.</li>
+</ul>
+
+<div class="greek-box">
+ἀγάπη (agápē)
+</div>
+
+<p>
+Describe el amor sacrificial y espiritual.
+El pecado endurece progresivamente el corazón humano.
+</p>
+
+<div class="alert alert-danger mt-4">
+El aumento de la maldad produce enfriamiento espiritual.
+</div>
+
+<button class="btn btn-warning rounded-pill" data-bs-toggle="modal" data-bs-target="#modalApostasia">
+Ver Ejemplos Bíblicos
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-triangle-exclamation"></i></div>
+<h3>Mateo 24:15-22 — La Abominación Desoladora</h3>
+</div>
+<div class="content-box">
+
+<div class="verse-box">
+“Cuando veáis en el lugar santo la abominación desoladora...”
+</div>
+
+<p>
+Jesús cita directamente al profeta Daniel.
+</p>
+
+<ul>
+<li>Profanación del lugar santo.</li>
+<li>Juicio severo.</li>
+<li>Gran tribulación.</li>
+</ul>
+
+<div class="row g-3 mt-4">
+<div class="col-md-4">
+<div class="timeline-item">
+<h5>Preterista</h5>
+<p>Cumplimiento en el año 70 d.C.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="timeline-item">
+<h5>Futurista</h5>
+<p>Evento futuro relacionado con el Anticristo.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="timeline-item">
+<h5>Mixta</h5>
+<p>Cumplimiento parcial y final futuro.</p>
+</div>
+</div>
+</div>
+
+<button class="btn btn-danger rounded-pill mt-4" data-bs-toggle="modal" data-bs-target="#modalTribulacion">
+Comparar Interpretaciones
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-cloud"></i></div>
+<h3>Mateo 24:29-31 — La Venida Gloriosa</h3>
+</div>
+<div class="content-box">
+
+<div class="verse-box">
+“Verán al Hijo del Hombre viniendo sobre las nubes...”
+</div>
+
+<p>
+Jesús describe su regreso glorioso usando lenguaje profético de Daniel 7.
+</p>
+
+<ul>
+<li>Manifestación visible.</li>
+<li>Autoridad universal.</li>
+<li>Juicio y gloria.</li>
+</ul>
+
+<h5 class="mt-4">Lenguaje Cósmico</h5>
+
+<ul>
+<li>Oscurecimiento del sol.</li>
+<li>Caída de estrellas.</li>
+<li>Conmoción celestial.</li>
+</ul>
+
+<button class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalCosmico">
+¿Literal o Simbólico?
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-leaf"></i></div>
+<h3>Mateo 24:32-35 — La Parábola de la Higuera</h3>
+</div>
+<div class="content-box">
+
+<div class="verse-box">
+“De la higuera aprended la parábola...”
+</div>
+
+<p>
+La higuera representa discernimiento espiritual y observación de señales proféticas.
+</p>
+
+<div class="alert alert-success mt-4">
+Jesús enseña a discernir los tiempos sin caer en especulación extrema.
+</div>
+
+<button class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#modalGeneracion">
+¿Quién es “esta generación”?
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-clock"></i></div>
+<h3>Mateo 24:36-51 — Vigilancia Espiritual</h3>
+</div>
+<div class="content-box">
+
+<div class="verse-box">
+“Pero del día y la hora nadie sabe...”
+</div>
+
+<p>
+Jesús prohíbe el sensacionalismo escatológico.
+</p>
+
+<ul>
+<li>No debemos fijar fechas.</li>
+<li>Debemos vivir preparados.</li>
+<li>La vigilancia produce santidad.</li>
+</ul>
+
+<h5 class="mt-4">Los Días de Noé</h5>
+
+<p>
+La humanidad vivía normalmente mientras ignoraba el juicio divino.
+</p>
+
+<div class="alert alert-warning mt-4">
+La preparación espiritual es más importante que la especulación profética.
+</div>
+
+<button class="btn btn-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#modalNoe">
+Aplicación de los Días de Noé
+</button>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="aplicacion" style="background:#eef4ff;">
+<div class="container">
+<div class="section-title">
+<h2>4. Principios Hermenéuticos y Aplicaciones</h2>
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-6">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-shield-halved fa-3x text-primary mb-4"></i>
+<h4>Discernimiento</h4>
+<p>La iglesia debe mantenerse firme frente al engaño espiritual y doctrinal.</p>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-eye fa-3x text-success mb-4"></i>
+<h4>Vigilancia</h4>
+<p>La escatología bíblica debe producir preparación espiritual.</p>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-crown fa-3x text-warning mb-4"></i>
+<h4>Esperanza</h4>
+<p>Mateo 24 culmina con la esperanza gloriosa del regreso de Cristo.</p>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-book-bible fa-3x text-danger mb-4"></i>
+<h4>Interpretación Equilibrada</h4>
+<p>La hermenéutica sana evita extremos entre literalismo absoluto y simbolismo excesivo.</p>
+</div>
+</div>
+
+</div>
+
+<div class="card-box fade-in mt-5">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-scroll"></i></div>
+<h3>Conclusión Exegética</h3>
+</div>
+<div class="content-box">
+
+<p>
+Mateo 24 presenta:
+</p>
+
+<ul>
+<li>Juicio histórico.</li>
+<li>Advertencia espiritual.</li>
+<li>Profecía escatológica.</li>
+<li>Esperanza futura.</li>
+</ul>
+
+<div class="verse-box">
+En medio del engaño, la tribulación y el juicio, los creyentes deben permanecer vigilantes y fieles esperando el regreso glorioso de Cristo.
+</div>
+
+<p class="mt-4">
+El propósito del discurso no es producir miedo sino fidelidad, discernimiento y esperanza.
+</p>
+
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<h4>Exégesis Interactiva de Mateo 24</h4>
+<p>Material desarrollado para enseñanza bíblica, institutos y seminarios ministeriales.</p>
+</div>
+</footer>
+
+<div class="modal fade" id="modalDobleCumplimiento" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Profecía de Doble Cumplimiento</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<p>
+Muchas profecías bíblicas tienen un cumplimiento cercano y otro futuro.
+Mateo 24 combina la destrucción histórica de Jerusalén con eventos relacionados al regreso final de Cristo.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="modalTemplo" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Destrucción del Templo</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<p>
+En el año 70 d.C. Jerusalén fue destruida por los romanos bajo el mando de Tito.
+El templo fue completamente arrasado cumpliendo literalmente la profecía de Jesús.
+</p>
+
+<div class="verse-box">
+“No quedará piedra sobre piedra...”
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="modalDolores" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Dolores de Parto</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<p>
+Jesús usa la imagen de los dolores de parto para describir eventos que aumentarán progresivamente antes del fin.
+</p>
+
+<ul>
+<li>Incremento gradual.</li>
+<li>Mayor intensidad.</li>
+<li>Preparación para un evento culminante.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="modalApostasia" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Ejemplos Bíblicos de Apostasía</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<ul>
+<li>Israel adorando el becerro de oro.</li>
+<li>Judas Iscariote traicionando a Cristo.</li>
+<li>Demas amando este mundo.</li>
+</ul>
+
+<div class="alert alert-danger mt-4">
+La apostasía implica abandono consciente de la verdad conocida.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="modalTribulacion" tabindex="-1">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Comparación Escatológica</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Postura</th>
+<th>Interpretación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Preterista</td>
+<td>Gran parte se cumplió en el siglo I.</td>
+</tr>
+<tr>
+<td>Futurista</td>
+<td>Tribulación futura mundial.</td>
+</tr>
+<tr>
+<td>Mixta</td>
+<td>Cumplimiento parcial y final futuro.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="modalCosmico" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Lenguaje Cósmico</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<p>
+Los profetas frecuentemente usaban lenguaje cósmico para describir juicios divinos y caída de imperios.
+</p>
+
+<ul>
+<li>Literal: fenómenos astronómicos reales.</li>
+<li>Simbólico: caída de poderes humanos.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="modalGeneracion" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">¿Quién es “Esta Generación”?</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<ul>
+<li>Generación contemporánea de Jesús.</li>
+<li>Generación futura que verá las señales.</li>
+<li>Referencia al pueblo judío.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="modalNoe" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Los Días de Noé</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<p>
+La humanidad vivía normalmente ignorando el juicio divino hasta que llegó el diluvio.
+Jesús usa esta comparación para enfatizar vigilancia y preparación espiritual.
+</p>
+
+<div class="verse-box">
+La vigilancia espiritual debe ser constante.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+function toggleDarkMode(){
+ document.body.classList.toggle('dark-mode');
+}
+
+const observer = new IntersectionObserver(entries => {
+ entries.forEach(entry => {
+   if(entry.isIntersecting){
+     entry.target.classList.add('visible');
+   }
+ });
+});
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

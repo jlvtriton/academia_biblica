@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual de Homilética Cristiana</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#0f172a;
+  --secondary:#d4a017;
+  --light:#f8fafc;
+  --accent:#2563eb;
+}
+
+*{
+  font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--light);
+  overflow-x:hidden;
+}
+
+.dark-mode{
+  background:#111827!important;
+  color:white!important;
+}
+
+.dark-mode .card-box,
+.dark-mode .tool-box,
+.dark-mode .accordion-item,
+.dark-mode .modal-content,
+.dark-mode .quiz-box{
+  background:#1f2937!important;
+  color:white!important;
+}
+
+.navbar{
+  background:rgba(15,23,42,.95)!important;
+  backdrop-filter:blur(10px);
+}
+
+.hero{
+  min-height:100vh;
+  background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=1600&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  color:white;
+}
+
+.glass{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  backdrop-filter:blur(12px);
+  border-radius:30px;
+  padding:40px;
+}
+
+.hero h1{
+  font-size:4rem;
+  font-weight:700;
+}
+
+section{
+  padding:90px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.section-title h2{
+  font-weight:700;
+  color:var(--primary);
+}
+
+.card-box{
+  background:white;
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  height:100%;
+  transition:.4s;
+}
+
+.card-box:hover{
+  transform:translateY(-10px);
+}
+
+.card-header-custom{
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:white;
+  padding:30px;
+}
+
+.icon-box{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  background:rgba(255,255,255,.15);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  margin-bottom:20px;
+}
+
+.verse-box{
+  background:#eef4ff;
+  border-left:5px solid var(--accent);
+  padding:20px;
+  border-radius:15px;
+  margin-top:20px;
+}
+
+.tool-box{
+  background:white;
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 10px 20px rgba(0,0,0,.08);
+  height:100%;
+}
+
+.fade-in{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+}
+
+.fade-in.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.dark-toggle{
+  position:fixed;
+  top:90px;
+  right:20px;
+  z-index:9999;
+}
+
+.quiz-box{
+  background:white;
+  padding:35px;
+  border-radius:25px;
+  box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+.timeline-item{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 8px 18px rgba(0,0,0,.08);
+  text-align:center;
+  height:100%;
+}
+
+footer{
+  background:#0f172a;
+  color:white;
+  text-align:center;
+  padding:40px 0;
+}
+
+@media(max-width:768px){
+  .hero h1{
+    font-size:2.5rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<button class="btn btn-dark rounded-pill dark-toggle" onclick="toggleDarkMode()">
+<i class="fa-solid fa-moon"></i> Modo Oscuro
+</button>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand fw-bold" href="#inicio">
+<i class="fa-solid fa-microphone"></i> Homilética Cristiana
+</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#clases">Clases</a></li>
+<li class="nav-item"><a class="nav-link" href="#bosquejos">Bosquejos</a></li>
+<li class="nav-item"><a class="nav-link" href="#quiz">Quiz</a></li>
+<li class="nav-item"><a class="nav-link" href="#certificado">Certificado</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<section class="hero" id="inicio">
+<div class="container">
+<div class="glass fade-in visible">
+<h1>Manual de Homilética Cristiana</h1>
+<p class="lead mt-4">
+Aprende a preparar, estructurar y predicar sermones bíblicos con claridad, profundidad y poder espiritual.
+</p>
+
+<div class="d-flex flex-wrap gap-2 mt-4">
+<span class="badge bg-warning text-dark p-3">Predicación Bíblica</span>
+<span class="badge bg-primary p-3">Bosquejos</span>
+<span class="badge bg-success p-3">Exposición Bíblica</span>
+<span class="badge bg-danger p-3">Ministerio</span>
+</div>
+
+<a href="#clases" class="btn btn-warning btn-lg rounded-pill mt-4">
+<i class="fa-solid fa-book-open"></i> Comenzar Curso
+</a>
+</div>
+</div>
+</section>
+
+<section id="clases">
+<div class="container">
+
+<div class="section-title">
+<h2>Curso Completo — 8 Clases</h2>
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-6 col-xl-3">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-book-bible"></i></div>
+<h4>Clase 1</h4>
+<h5>¿Qué es la Homilética?</h5>
+</div>
+<div class="p-4">
+<p>Introducción a la predicación bíblica y al llamado ministerial.</p>
+<ul>
+<li>Definición de homilética</li>
+<li>Importancia de predicar</li>
+<li>Responsabilidad espiritual</li>
+</ul>
+
+<div class="verse-box">
+<strong>2 Timoteo 4:2</strong><br>
+"Que prediques la palabra..."
+</div>
+
+<button class="btn btn-primary rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#modal1">
+Ver Análisis
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-lg-6 col-xl-3">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-fire"></i></div>
+<h4>Clase 2</h4>
+<h5>El Llamado</h5>
+</div>
+<div class="p-4">
+<p>Características espirituales del predicador bíblico.</p>
+<ul>
+<li>Consagración</li>
+<li>Vida devocional</li>
+<li>Dependencia del Espíritu Santo</li>
+</ul>
+
+<div class="verse-box">
+<strong>Jeremías 1:7</strong><br>
+"A todo lo que te envíe irás tú..."
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-lg-6 col-xl-3">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-pen"></i></div>
+<h4>Clase 3</h4>
+<h5>Preparación del Sermón</h5>
+</div>
+<div class="p-4">
+<ul>
+<li>Observación</li>
+<li>Interpretación</li>
+<li>Aplicación</li>
+<li>Objetivo central</li>
+</ul>
+
+<div class="verse-box">
+<strong>Esdras 7:10</strong><br>
+Esdras preparó su corazón para estudiar y enseñar.
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-lg-6 col-xl-3">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-layer-group"></i></div>
+<h4>Clase 4</h4>
+<h5>Tipos de Sermones</h5>
+</div>
+<div class="p-4">
+<ul>
+<li>Temático</li>
+<li>Textual</li>
+<li>Expositivo</li>
+</ul>
+
+<div class="verse-box">
+<strong>Nehemías 8:8</strong><br>
+Explicaban claramente el sentido de la Escritura.
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-lg-6 col-xl-3">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-bullhorn"></i></div>
+<h4>Clase 5</h4>
+<h5>Introducción y Conclusión</h5>
+</div>
+<div class="p-4">
+<ul>
+<li>Cómo captar atención</li>
+<li>Uso de ilustraciones</li>
+<li>Llamado final</li>
+</ul>
+
+<div class="verse-box">
+<strong>Mateo 13</strong><br>
+Jesús enseñaba usando parábolas.
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-lg-6 col-xl-3">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-comments"></i></div>
+<h4>Clase 6</h4>
+<h5>Comunicación Eficaz</h5>
+</div>
+<div class="p-4">
+<ul>
+<li>Lenguaje corporal</li>
+<li>Voz y entonación</li>
+<li>Manejo de nervios</li>
+</ul>
+
+<div class="verse-box">
+<strong>Éxodo 4:12</strong><br>
+"Yo estaré con tu boca..."
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-lg-6 col-xl-3">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-triangle-exclamation"></i></div>
+<h4>Clase 7</h4>
+<h5>Errores Comunes</h5>
+</div>
+<div class="p-4">
+<ul>
+<li>Fuera de contexto</li>
+<li>Mucho emocionalismo</li>
+<li>Falta de preparación</li>
+</ul>
+
+<div class="verse-box">
+<strong>Santiago 3:1</strong><br>
+Los maestros recibirán mayor responsabilidad.
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-lg-6 col-xl-3">
+<div class="card-box fade-in">
+<div class="card-header-custom">
+<div class="icon-box"><i class="fa-solid fa-dove"></i></div>
+<h4>Clase 8</h4>
+<h5>El Espíritu Santo y la Predicación</h5>
+</div>
+<div class="p-4">
+<ul>
+<li>Unción</li>
+<li>Dependencia espiritual</li>
+<li>Transformación de vidas</li>
+</ul>
+
+<div class="verse-box">
+<strong>Hechos 1:8</strong><br>
+"Recibiréis poder..."
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="bosquejos" style="background:#eef4ff;">
+<div class="container">
+<div class="section-title">
+<h2>Ejemplos de Bosquejos</h2>
+</div>
+
+<div class="row g-4">
+<div class="col-lg-6">
+<div class="tool-box fade-in">
+<h4><i class="fa-solid fa-scroll"></i> Sermón Expositivo</h4>
+<h5 class="mt-3">Salmo 23</h5>
+<ul>
+<li>El Señor es mi pastor</li>
+<li>Dios guía</li>
+<li>Dios protege</li>
+<li>Dios restaura</li>
+</ul>
+</div>
+</div>
+
+<div class="col-lg-6">
+<div class="tool-box fade-in">
+<h4><i class="fa-solid fa-lightbulb"></i> Sermón Temático</h4>
+<h5 class="mt-3">La Fe</h5>
+<ul>
+<li>Qué es la fe</li>
+<li>Cómo crece</li>
+<li>Obstáculos</li>
+<li>Resultados de la fe</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="timeline">
+<div class="container">
+<div class="section-title">
+<h2>Proceso de Preparación de un Sermón</h2>
+</div>
+
+<div class="row g-4">
+<div class="col-md-3">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-praying-hands fa-3x mb-3 text-primary"></i>
+<h5>Oración</h5>
+<p>Buscar dirección espiritual.</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-book-open fa-3x mb-3 text-success"></i>
+<h5>Estudio</h5>
+<p>Analizar el texto bíblico.</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-pen fa-3x mb-3 text-warning"></i>
+<h5>Organización</h5>
+<p>Crear el bosquejo.</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="timeline-item fade-in">
+<i class="fa-solid fa-microphone fa-3x mb-3 text-danger"></i>
+<h5>Predicación</h5>
+<p>Comunicar el mensaje.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="quiz" style="background:#eef4ff;">
+<div class="container">
+<div class="section-title">
+<h2>Quiz Interactivo</h2>
+</div>
+
+<div class="quiz-box fade-in">
+<ol>
+<li>¿Qué estudia la homilética?</li>
+<li>¿Qué diferencia hay entre sermón textual y expositivo?</li>
+<li>¿Por qué es importante la oración?</li>
+<li>¿Qué debe contener una introducción?</li>
+<li>¿Cuál es el propósito de la conclusión?</li>
+<li>¿Qué errores debe evitar un predicador?</li>
+<li>¿Por qué es importante el contexto bíblico?</li>
+<li>¿Qué función cumplen las ilustraciones?</li>
+<li>¿Cómo influye el Espíritu Santo?</li>
+<li>¿Cuál es el objetivo final de la predicación?</li>
+</ol>
+
+<button class="btn btn-success rounded-pill mt-3" onclick="mostrarResultado()">
+Ver Resultado
+</button>
+
+<div id="resultadoQuiz" class="mt-4 fw-bold"></div>
+</div>
+</div>
+</section>
+
+<section id="herramientas">
+<div class="container">
+<div class="section-title">
+<h2>Herramientas Ministeriales</h2>
+</div>
+
+<div class="row g-4">
+<div class="col-md-3">
+<div class="tool-box text-center fade-in">
+<i class="fa-solid fa-book fa-2x mb-3 text-primary"></i>
+<h5>Concordancia</h5>
+<p>Buscar palabras y temas bíblicos.</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="tool-box text-center fade-in">
+<i class="fa-solid fa-globe fa-2x mb-3 text-success"></i>
+<h5>Diccionario Bíblico</h5>
+<p>Comprender términos y lugares.</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="tool-box text-center fade-in">
+<i class="fa-solid fa-scroll fa-2x mb-3 text-warning"></i>
+<h5>Comentarios</h5>
+<p>Explicación histórica y doctrinal.</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="tool-box text-center fade-in">
+<i class="fa-solid fa-laptop fa-2x mb-3 text-danger"></i>
+<h5>Software Bíblico</h5>
+<p>Herramientas digitales de estudio.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="certificado" style="background:linear-gradient(135deg,#0f172a,#1e3a5f); color:white;">
+<div class="container text-center">
+<h2 class="fw-bold mb-5">Certificado Final</h2>
+
+<div class="glass mx-auto" style="max-width:900px;">
+<h1>CERTIFICADO</h1>
+<p class="mt-4">Se certifica que:</p>
+<h2 class="fw-bold">______________________</h2>
+
+<p class="mt-4">
+Ha completado satisfactoriamente el curso de
+<strong>Homilética Cristiana</strong>.
+</p>
+
+<div class="row mt-5">
+<div class="col-md-6">
+<p>______________________</p>
+<small>Instructor</small>
+</div>
+
+<div class="col-md-6">
+<p>______________________</p>
+<small>Fecha</small>
+</div>
+</div>
+
+<button class="btn btn-warning rounded-pill mt-4" onclick="window.print()">
+<i class="fa-solid fa-file-pdf"></i> Descargar PDF
+</button>
+</div>
+</div>
+</section>
+
+<section id="panel" style="background:#eef4ff;">
+<div class="container">
+<div class="section-title">
+<h2>Panel para Agregar Nuevas Clases</h2>
+</div>
+
+<div class="tool-box fade-in">
+<div class="row g-3">
+<div class="col-md-6">
+<input type="text" class="form-control" placeholder="Título de la clase">
+</div>
+
+<div class="col-md-6">
+<input type="text" class="form-control" placeholder="Tema principal">
+</div>
+
+<div class="col-12">
+<textarea class="form-control" rows="5" placeholder="Contenido de la clase"></textarea>
+</div>
+
+<div class="col-12 text-end">
+<button class="btn btn-primary rounded-pill">
+<i class="fa-solid fa-plus"></i> Agregar Clase
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<h4>Manual de Homilética Cristiana</h4>
+<p>Material diseñado para formación de predicadores y líderes cristianos.</p>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+function toggleDarkMode(){
+ document.body.classList.toggle('dark-mode');
+}
+
+const observer = new IntersectionObserver(entries => {
+ entries.forEach(entry => {
+   if(entry.isIntersecting){
+     entry.target.classList.add('visible');
+   }
+ });
+});
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+function mostrarResultado(){
+ document.getElementById('resultadoQuiz').innerHTML='¡Excelente! Has completado el quiz de homilética.';
+}
+</script>
+
+<div class="modal fade" id="modal1" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Análisis de 2 Timoteo 4:2</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<p>
+Pablo exhorta a Timoteo a predicar constantemente, tanto en momentos favorables como difíciles.
+La predicación bíblica debe incluir corrección, exhortación y enseñanza con paciencia.
+</p>
+
+<div class="verse-box">
+La autoridad del predicador proviene de la Palabra de Dios y no solamente de su experiencia personal.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
