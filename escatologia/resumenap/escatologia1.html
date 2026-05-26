@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Línea de Tiempo Escatológica</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --text-light: #ecf0f1;
+            --bg-color: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1464802686167-b939a6910659?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        /* Línea central */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 45%;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+
+        .container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .left { left: 0; }
+        .right { left: 50%; }
+
+        /* Círculos indicadores */
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: var(--accent-color);
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .right::after { left: -17px; }
+
+        .content {
+            padding: 20px 30px;
+            background-color: #2c3e50;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        h2 { color: #f1c40f; margin-top: 0; }
+        p { line-height: 1.6; }
+
+        @media screen and (max-width: 600px) {
+            .timeline::after { left: 31px; }
+            .container { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .container::after { left: 15px; }
+            .right { left: 0%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Eventos Escatológicos Biblicos</h1>
+    <p>Una perspectiva cronológica del fin de los tiempos</p>
+</header>
+
+<div class="timeline">
+    <div class="container left">
+        <div class="content">
+            <h2>1. El Arrebatamiento</h2>
+            <p>El evento donde los creyentes son llevados para encontrarse con el Señor en el aire. Sucede de forma inminente antes de la Gran Tribulación.</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content">
+            <h2>2. La Gran Tribulación</h2>
+            <p>Un periodo de 7 años de juicio sobre la tierra. Se divide en dos etapas, culminando con el ascenso del Anticristo.</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content">
+            <h2>3. La Segunda Venida</h2>
+            <p>Cristo regresa físicamente a la tierra con sus santos para derrotar a las naciones en la batalla de Armagedón.</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content">
+            <h2>4. El Milenio</h2>
+            <p>Un periodo de 1,000 años de paz donde Cristo reina sobre la tierra desde Jerusalén. Satanás es atado.</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content">
+            <h2>5. Juicio del Trono Blanco</h2>
+            <p>El juicio final de todos los muertos no redimidos ante Dios. El mal es finalmente derrotado para siempre.</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content">
+            <h2>6. Cielo Nuevo y Tierra Nueva</h2>
+            <p>La restauración total de la creación. Dios habita con la humanidad en la Nueva Jerusalén por la eternidad.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Animación al hacer scroll
+    const observerOptions = {
+        threshold: 0.2
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.container').forEach(container => {
+        observer.observe(container);
+    });
+</script>
+
+</body>
+</html>

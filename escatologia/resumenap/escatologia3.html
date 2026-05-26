@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronología Escatológica con Citas Interactivas</title>
+    <style>
+        :root {
+            --bg-dark: #0f0f12;
+            --card-bg: #1e1e26;
+            --accent-gold: #d4af37;
+            --accent-blue: #3498db;
+            --text-main: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Estilos de la Línea de Tiempo */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--accent-gold);
+            top: 0; bottom: 0; left: 50%;
+        }
+
+        .event {
+            width: 45%;
+            margin-bottom: 50px;
+            position: relative;
+            cursor: default;
+        }
+
+        .left { float: left; text-align: right; }
+        .right { float: right; text-align: left; }
+
+        .content {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-bottom: 3px solid var(--accent-gold);
+            transition: transform 0.3s;
+        }
+
+        .content:hover { transform: translateY(-5px); }
+
+        /* Estilo de la Cita Bíblica (Clickeable) */
+        .reference {
+            display: inline-block;
+            color: var(--accent-blue);
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+
+        .reference:hover { color: #5dade2; }
+
+        /* Ventana Emergente (Modal) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 15% auto;
+            padding: 30px;
+            border: 1px solid var(--accent-gold);
+            width: 80%;
+            max-width: 500px;
+            border-radius: 12px;
+            position: relative;
+            animation: fadeIn 0.4s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px; right: 15px;
+            color: var(--accent-gold);
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        h3 { color: var(--accent-gold); margin-top: 0; }
+        #modal-text { font-style: italic; font-size: 1.1em; }
+
+        .clearfix::after { content: ""; clear: both; display: table; }
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center; color: var(--accent-gold); padding-top: 40px;">Línea de Tiempo Interactiva</h1>
+
+<div class="timeline clearfix">
+
+    <div class="event left">
+        <div class="content">
+            <span class="reference" onclick="openModal('Mat 24:7-8', 'Porque se levantará nación contra nación... y habrá pestes, y hambres, y terremotos en diferentes lugares. Y todo esto será principio de dolores.')">Mateo 24:7-8</span>
+            <h3>Principio de Dolores</h3>
+            <p>Señales que preparan el escenario mundial.</p>
+        </div>
+    </div>
+
+    <div class="event right">
+        <div class="content">
+            <span class="reference" onclick="openModal('1 Tes 4:16-17', 'Porque el Señor mismo con voz de mando... descenderá del cielo; y los muertos en Cristo resucitarán primero. Luego nosotros los que vivimos... seremos arrebatados juntamente con ellos en las nubes.')">1 Tesalonicenses 4:16-17</span>
+            <h3>El Arrebatamiento</h3>
+            <p>El misterio revelado a Pablo sobre la Iglesia.</p>
+        </div>
+    </div>
+
+    <div class="event left">
+        <div class="content">
+            <span class="reference" onclick="openModal('Dan 9:27', 'Y por otra semana confirmará el pacto con muchos; a la mitad de la semana hará cesar el sacrificio y la ofrenda.')">Daniel 9:27</span>
+            <h3>Semana 70</h3>
+            <p>El inicio del pacto de siete años.</p>
+        </div>
+    </div>
+
+    <div class="event right">
+        <div class="content">
+            <span class="reference" onclick="openModal('Zac 14:4', 'Y se afirmarán sus pies en aquel día sobre el monte de los Olivos, que está enfrente de Jerusalén al oriente.')">Zacarías 14:4</span>
+            <h3>Segunda Venida</h3>
+            <p>El retorno físico de Cristo a la Tierra.</p>
+        </div>
+    </div>
+
+</div>
+
+<div id="bibleModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title" style="color: var(--accent-blue);"></h2>
+        <p id="modal-text"></p>
+    </div>
+</div>
+
+<script>
+    function openModal(title, text) {
+        document.getElementById('modal-title').innerText = title;
+        document.getElementById('modal-text').innerText = text;
+        document.getElementById('bibleModal').style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById('bibleModal').style.display = "none";
+    }
+
+    // Cerrar si se hace clic fuera del cuadro
+    window.onclick = function(event) {
+        let modal = document.getElementById('bibleModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
