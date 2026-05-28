@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsabilidades y Cualidades del Servidor Cristiano</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root{
+      --primary:#0d3b66;
+      --secondary:#145da0;
+      --accent:#f4b942;
+      --light:#f8f9fa;
+      --dark:#1e1e1e;
+    }
+
+    *{
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f3f6fb;
+      color:#333;
+    }
+
+    .hero{
+      min-height:100vh;
+      background:
+        linear-gradient(rgba(8,18,36,.82),rgba(8,18,36,.85)),
+        url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:60px 20px;
+    }
+
+    .hero h1{
+      font-size:3.3rem;
+      font-weight:700;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      max-width:900px;
+      margin:auto;
+      opacity:.95;
+    }
+
+    .btn-custom{
+      background:var(--accent);
+      color:#222;
+      border:none;
+      padding:14px 30px;
+      border-radius:40px;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .btn-custom:hover{
+      transform:translateY(-2px);
+      background:#ffd166;
+    }
+
+    .section-title{
+      position:relative;
+      margin-bottom:40px;
+      font-weight:700;
+      color:var(--primary);
+    }
+
+    .section-title::after{
+      content:'';
+      width:80px;
+      height:4px;
+      background:var(--accent);
+      position:absolute;
+      left:0;
+      bottom:-10px;
+      border-radius:5px;
+    }
+
+    .card-custom{
+      border:none;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      transition:.3s;
+      height:100%;
+    }
+
+    .card-custom:hover{
+      transform:translateY(-6px);
+    }
+
+    .card-icon{
+      font-size:2.7rem;
+      color:var(--secondary);
+    }
+
+    .verse-box{
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      color:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,.12);
+    }
+
+    .timeline{
+      border-left:4px solid var(--accent);
+      padding-left:25px;
+    }
+
+    .timeline-item{
+      margin-bottom:25px;
+      position:relative;
+    }
+
+    .timeline-item::before{
+      content:'';
+      width:18px;
+      height:18px;
+      background:var(--accent);
+      border-radius:50%;
+      position:absolute;
+      left:-35px;
+      top:5px;
+    }
+
+    .accordion-button:not(.collapsed){
+      background:var(--secondary);
+      color:white;
+    }
+
+    .quote-section{
+      background:linear-gradient(135deg,#0d3b66,#1d70b8);
+      color:white;
+      border-radius:25px;
+      padding:60px 30px;
+      text-align:center;
+    }
+
+    .quote-section h2{
+      font-size:2rem;
+      font-weight:700;
+    }
+
+    footer{
+      background:#081224;
+      color:white;
+      padding:30px 0;
+      text-align:center;
+    }
+
+    .badge-time{
+      background:var(--accent);
+      color:#222;
+      font-weight:600;
+      padding:10px 16px;
+      border-radius:30px;
+      font-size:.95rem;
+    }
+
+    .floating-nav{
+      position:fixed;
+      top:20px;
+      right:20px;
+      z-index:1000;
+    }
+
+    .floating-nav .btn{
+      border-radius:50px;
+      box-shadow:0 5px 15px rgba(0,0,0,.15);
+    }
+
+    @media(max-width:768px){
+      .hero h1{
+        font-size:2.3rem;
+      }
+
+      .hero p{
+        font-size:1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="floating-nav dropdown">
+  <button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">
+    <i class="bi bi-list"></i> Navegación
+  </button>
+
+  <ul class="dropdown-menu shadow border-0 rounded-4">
+    <li><a class="dropdown-item" href="#intro">Introducción</a></li>
+    <li><a class="dropdown-item" href="#responsabilidades">Responsabilidades</a></li>
+    <li><a class="dropdown-item" href="#cualidades">Cualidades</a></li>
+    <li><a class="dropdown-item" href="#obstaculos">Obstáculos</a></li>
+    <li><a class="dropdown-item" href="#conclusion">Conclusión</a></li>
+  </ul>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <span class="badge-time mb-4 d-inline-block">
+      Estudio Bíblico · Duración Aproximada: 1h 15min
+    </span>
+
+    <h1>Responsabilidades y Cualidades del Servidor Cristiano</h1>
+
+    <p class="mt-4 mb-5">
+      Un llamado a servir con humildad, amor, fidelidad y excelencia,
+      reflejando el carácter de Jesucristo en cada área de nuestra vida.
+    </p>
+
+    <a href="#intro" class="btn btn-custom btn-lg">
+      Comenzar Estudio <i class="bi bi-arrow-down-circle"></i>
+    </a>
+  </div>
+</section>
+
+<section class="py-5" id="intro">
+  <div class="container py-4">
+
+    <h2 class="section-title">Introducción</h2>
+
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-7">
+
+        <div class="verse-box">
+          <h4 class="fw-bold mb-3">Texto Base</h4>
+
+          <p class="fs-5 mb-3">
+            “Y todo lo que hagáis, hacedlo de corazón, como para el Señor y no para los hombres.”
+          </p>
+
+          <strong>Colosenses 3:23</strong>
+        </div>
+
+      </div>
+
+      <div class="col-lg-5">
+        <div class="card card-custom p-4">
+          <h4 class="fw-bold text-primary mb-3">Objetivo del Estudio</h4>
+
+          <p>
+            Comprender que el servicio cristiano no es solamente una función dentro de la iglesia,
+            sino una expresión visible del carácter de Cristo en nuestra vida diaria.
+          </p>
+
+          <ul>
+            <li>Entender el significado del servicio cristiano.</li>
+            <li>Conocer responsabilidades esenciales.</li>
+            <li>Desarrollar cualidades espirituales.</li>
+            <li>Reflexionar sobre nuestro testimonio.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-white">
+  <div class="container py-4">
+
+    <h2 class="section-title">¿Qué es un Servidor Cristiano?</h2>
+
+    <div class="row g-4 mt-3">
+
+      <div class="col-md-4">
+        <div class="card card-custom p-4 text-center">
+          <div class="card-icon mb-3">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+
+          <h4>Sirve con Amor</h4>
+
+          <p>
+            El verdadero servicio nace de un corazón agradecido hacia Dios.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card card-custom p-4 text-center">
+          <div class="card-icon mb-3">
+            <i class="bi bi-people-fill"></i>
+          </div>
+
+          <h4>Sirve a las Personas</h4>
+
+          <p>
+            Servimos a Dios cuando bendecimos, ayudamos y edificamos a otros.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card card-custom p-4 text-center">
+          <div class="card-icon mb-3">
+            <i class="bi bi-stars"></i>
+          </div>
+
+          <h4>Imita a Cristo</h4>
+
+          <p>
+            Jesús es el ejemplo supremo de humildad y entrega.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-5">
+      <div class="alert alert-primary border-0 shadow-sm rounded-4 p-4">
+        <h5 class="fw-bold mb-3">Texto Clave</h5>
+
+        <p class="mb-2 fs-5">
+          “Porque el Hijo del Hombre no vino para ser servido, sino para servir...”
+        </p>
+
+        <strong>Marcos 10:45</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" id="responsabilidades">
+  <div class="container py-4">
+
+    <h2 class="section-title">Responsabilidades del Servidor Cristiano</h2>
+
+    <div class="accordion accordion-flush" id="accordionResponsabilidades">
+
+      <div class="accordion-item rounded-4 mb-3 overflow-hidden shadow-sm border-0">
+        <h2 class="accordion-header">
+          <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#r1">
+            1. Vivir en Santidad
+          </button>
+        </h2>
+
+        <div id="r1" class="accordion-collapse collapse show" data-bs-parent="#accordionResponsabilidades">
+          <div class="accordion-body">
+            <p><strong>Texto:</strong> 1 Pedro 1:16</p>
+
+            <p>
+              El servidor cristiano debe reflejar una vida apartada para Dios.
+              No basta servir públicamente; también debemos vivir correctamente en privado.
+            </p>
+
+            <ul>
+              <li>Buen testimonio.</li>
+              <li>Honestidad.</li>
+              <li>Pureza.</li>
+              <li>Vida espiritual constante.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item rounded-4 mb-3 overflow-hidden shadow-sm border-0">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#r2">
+            2. Servir con Amor
+          </button>
+        </h2>
+
+        <div id="r2" class="accordion-collapse collapse" data-bs-parent="#accordionResponsabilidades">
+          <div class="accordion-body">
+            <p><strong>Texto:</strong> Gálatas 5:13</p>
+
+            <p>
+              El amor debe ser la motivación del servicio cristiano.
+              No servimos por obligación ni por reconocimiento.
+            </p>
+
+            <div class="row g-3 mt-2">
+              <div class="col-md-6">
+                <div class="alert alert-success rounded-4 border-0">
+                  <strong>Actitudes Correctas</strong>
+                  <ul class="mt-2 mb-0">
+                    <li>Paciencia</li>
+                    <li>Compasión</li>
+                    <li>Unidad</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="alert alert-danger rounded-4 border-0">
+                  <strong>Actitudes Incorrectas</strong>
+                  <ul class="mt-2 mb-0">
+                    <li>Celos</li>
+                    <li>Competencia</li>
+                    <li>Quejas</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item rounded-4 mb-3 overflow-hidden shadow-sm border-0">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#r3">
+            3. Ser Responsable y Fiel
+          </button>
+        </h2>
+
+        <div id="r3" class="accordion-collapse collapse" data-bs-parent="#accordionResponsabilidades">
+          <div class="accordion-body">
+            <p><strong>Texto:</strong> 1 Corintios 4:2</p>
+
+            <div class="timeline mt-4">
+              <div class="timeline-item">
+                <h5>Puntualidad</h5>
+                <p>Llegar a tiempo demuestra respeto y compromiso.</p>
+              </div>
+
+              <div class="timeline-item">
+                <h5>Preparación</h5>
+                <p>Debemos prepararnos espiritualmente y técnicamente.</p>
+              </div>
+
+              <div class="timeline-item">
+                <h5>Constancia</h5>
+                <p>La fidelidad se demuestra en el tiempo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item rounded-4 mb-3 overflow-hidden shadow-sm border-0">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#r4">
+            4. Predicar con el Ejemplo
+          </button>
+        </h2>
+
+        <div id="r4" class="accordion-collapse collapse" data-bs-parent="#accordionResponsabilidades">
+          <div class="accordion-body">
+            <p><strong>Texto:</strong> 1 Timoteo 4:12</p>
+
+            <p>
+              Un servidor influye incluso cuando no está predicando.
+              Nuestra conducta habla más fuerte que nuestras palabras.
+            </p>
+
+            <div class="row text-center g-3 mt-3">
+              <div class="col-md-3">
+                <div class="card p-3 rounded-4 border-0 bg-light h-100">
+                  <h6>Conducta</h6>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="card p-3 rounded-4 border-0 bg-light h-100">
+                  <h6>Fe</h6>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="card p-3 rounded-4 border-0 bg-light h-100">
+                  <h6>Pureza</h6>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="card p-3 rounded-4 border-0 bg-light h-100">
+                  <h6>Amor</h6>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-white" id="cualidades">
+  <div class="container py-4">
+
+    <h2 class="section-title">Cualidades del Servidor Cristiano</h2>
+
+    <div class="row g-4 mt-2">
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card card-custom p-4 text-center">
+          <div class="card-icon mb-3">
+            <i class="bi bi-person-heart"></i>
+          </div>
+
+          <h4>Humildad</h4>
+
+          <p>
+            El servidor humilde reconoce que todo proviene de Dios.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card card-custom p-4 text-center">
+          <div class="card-icon mb-3">
+            <i class="bi bi-send-check"></i>
+          </div>
+
+          <h4>Disponibilidad</h4>
+
+          <p>
+            Dios usa personas dispuestas a responder al llamado.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card card-custom p-4 text-center">
+          <div class="card-icon mb-3">
+            <i class="bi bi-award"></i>
+          </div>
+
+          <h4>Fidelidad</h4>
+
+          <p>
+            La fidelidad se demuestra incluso en tareas pequeñas.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card card-custom p-4 text-center">
+          <div class="card-icon mb-3">
+            <i class="bi bi-lightbulb"></i>
+          </div>
+
+          <h4>Sabiduría</h4>
+
+          <p>
+            Un servidor prudente evita conflictos y edifica a otros.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="quote-section mt-5">
+      <h2>
+        “Heme aquí, envíame a mí”
+      </h2>
+
+      <p class="mt-3 fs-5">
+        Isaías 6:8
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="py-5" id="obstaculos">
+  <div class="container py-4">
+
+    <h2 class="section-title">Obstáculos que Dañan el Servicio</h2>
+
+    <p class="mb-5 text-muted fs-5">
+      A lo largo de la Biblia encontramos ejemplos de personas que enfrentaron obstáculos
+      espirituales que afectaron su servicio a Dios. Presiona sobre cada tarjeta para conocer el ejemplo bíblico.
+    </p>
+
+    <div class="row g-4 mt-3">
+
+      <div class="col-md-4">
+        <div class="card card-custom p-4 text-center h-100" role="button" data-bs-toggle="modal" data-bs-target="#modalOrgullo">
+          <i class="bi bi-exclamation-triangle-fill text-danger fs-1 mb-3"></i>
+          <h5>Orgullo</h5>
+          <p>El orgullo destruye la unidad y la humildad.</p>
+          <div class="mt-3">
+            <span class="btn btn-outline-danger rounded-pill px-4">
+              Ver ejemplo bíblico
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card card-custom p-4 text-center h-100" role="button" data-bs-toggle="modal" data-bs-target="#modalCansancio">
+          <i class="bi bi-battery-half text-warning fs-1 mb-3"></i>
+          <h5>Cansancio Espiritual</h5>
+          <p>Debemos cuidar nuestra comunión con Dios.</p>
+          <div class="mt-3">
+            <span class="btn btn-outline-warning rounded-pill px-4">
+              Ver ejemplo bíblico
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card card-custom p-4 text-center h-100" role="button" data-bs-toggle="modal" data-bs-target="#modalCompromiso">
+          <i class="bi bi-person-x-fill text-dark fs-1 mb-3"></i>
+          <h5>Falta de Compromiso</h5>
+          <p>La inconstancia afecta el crecimiento espiritual.</p>
+          <div class="mt-3">
+            <span class="btn btn-outline-dark rounded-pill px-4">
+              Ver ejemplo bíblico
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Modal Orgullo -->
+<div class="modal fade" id="modalOrgullo" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-0 rounded-4 overflow-hidden">
+
+      <div class="modal-header bg-danger text-white border-0">
+        <h4 class="modal-title fw-bold">
+          El Orgullo de Lucifer
+        </h4>
+
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body p-4">
+
+        <p class="fs-5">
+          Lucifer fue creado con hermosura y autoridad, pero su orgullo lo llevó a querer ocupar el lugar de Dios.
+        </p>
+
+        <div class="alert alert-danger rounded-4 border-0 mt-4">
+          <h5 class="fw-bold">Texto Bíblico</h5>
+
+          <p class="mb-2 fst-italic">
+            “Subiré al cielo; en lo alto, junto a las estrellas de Dios, levantaré mi trono...”
+          </p>
+
+          <strong>Isaías 14:13-14</strong>
+        </div>
+
+        <h5 class="fw-bold mt-4">Lección Espiritual</h5>
+
+        <p>
+          El orgullo puede destruir incluso a alguien con privilegios espirituales.
+          Un servidor cristiano debe recordar siempre que toda gloria pertenece a Dios.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Cansancio -->
+<div class="modal fade" id="modalCansancio" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-0 rounded-4 overflow-hidden">
+
+      <div class="modal-header bg-warning border-0">
+        <h4 class="modal-title fw-bold text-dark">
+          El Desánimo de Elías
+        </h4>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body p-4">
+
+        <p class="fs-5">
+          Después de una gran victoria espiritual, Elías se sintió agotado, desanimado y quiso abandonar.
+        </p>
+
+        <div class="alert alert-warning rounded-4 border-0 mt-4">
+          <h5 class="fw-bold">Texto Bíblico</h5>
+
+          <p class="mb-2 fst-italic">
+            “Basta ya, oh Jehová, quítame la vida...”
+          </p>
+
+          <strong>1 Reyes 19:4</strong>
+        </div>
+
+        <h5 class="fw-bold mt-4">Lección Espiritual</h5>
+
+        <p>
+          Incluso los grandes hombres de Dios pueden cansarse.
+          Necesitamos descanso, oración, comunión con Dios y apoyo espiritual.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Compromiso -->
+<div class="modal fade" id="modalCompromiso" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-0 rounded-4 overflow-hidden">
+
+      <div class="modal-header bg-dark text-white border-0">
+        <h4 class="modal-title fw-bold">
+          La Inconstancia de Demas
+        </h4>
+
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body p-4">
+
+        <p class="fs-5">
+          Demas trabajó junto al apóstol Pablo, pero abandonó el ministerio porque amó más las cosas del mundo.
+        </p>
+
+        <div class="alert alert-secondary rounded-4 border-0 mt-4">
+          <h5 class="fw-bold">Texto Bíblico</h5>
+
+          <p class="mb-2 fst-italic">
+            “Porque Demas me ha desamparado, amando este mundo...”
+          </p>
+
+          <strong>2 Timoteo 4:10</strong>
+        </div>
+
+        <h5 class="fw-bold mt-4">Lección Espiritual</h5>
+
+        <p>
+          El compromiso con Dios debe mantenerse firme.
+          No podemos permitir que las distracciones del mundo apaguen nuestro servicio.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="py-5 bg-white" id="conclusion">
+  <div class="container py-4">
+
+    <h2 class="section-title">Conclusión</h2>
+
+    <div class="row g-4 align-items-center">
+
+      <div class="col-lg-7">
+        <div class="card card-custom p-5">
+
+          <h3 class="fw-bold text-primary mb-4">
+            Reflexión Final
+          </h3>
+
+          <p class="fs-5">
+            Dios no busca solamente personas talentosas,
+            sino corazones dispuestos, fieles y humildes.
+          </p>
+
+          <div class="mt-4">
+            <h5 class="fw-bold">Preguntas para Reflexionar</h5>
+
+            <ul class="mt-3">
+              <li>¿Estoy sirviendo con amor?</li>
+              <li>¿Mi vida respalda mi ministerio?</li>
+              <li>¿Qué debo mejorar como servidor cristiano?</li>
+              <li>¿Sirvo para agradar a Dios o a los hombres?</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="verse-box h-100 d-flex flex-column justify-content-center">
+
+          <h4 class="fw-bold mb-4">Texto Final</h4>
+
+          <p class="fs-4">
+            “Y cualquiera que quiera ser el primero entre vosotros será vuestro siervo.”
+          </p>
+
+          <strong class="mt-3">Mateo 20:27</strong>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <h5 class="fw-bold">Responsabilidades y Cualidades del Servidor Cristiano</h5>
+
+    <p class="mb-0 mt-3">
+      “El verdadero servidor no busca ser visto por los hombres,
+      sino agradar a Dios aun cuando nadie lo está mirando.”
+    </p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
